@@ -12,3 +12,12 @@ export interface Comment {
     author: User;
     createAd: string;
 }
+
+export interface Task {
+    id: string;
+    title: string;
+    description?: string;
+    status: Status;
+    comments: Comment[];
+    createdAt: string;
+}
