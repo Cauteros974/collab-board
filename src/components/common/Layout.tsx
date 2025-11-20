@@ -8,7 +8,7 @@ export const Layout = () => {
 
     return(
         <div style={{ display: 'grid', gridTemplateColumns: '250px 1fr', height: '100vh' }}>
-            <aside style={{ background: 'var(--color-bg-secondary)', padding:18}}
+            <aside style={{ background: 'var(--color-bg-secondary)', padding:20}}
         </div>
     )
 }
