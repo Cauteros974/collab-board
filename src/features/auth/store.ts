@@ -6,3 +6,7 @@ interface AuthStore {
     login: (name: string) => void;
     logout: () => void;
 }
+
+export const useAuthStore = create<AuthStore>((set) => ({
+    user: JSON.parse(localStorage.getItem('user') || null),
+}));
