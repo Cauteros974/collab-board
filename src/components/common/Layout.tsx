@@ -11,7 +11,9 @@ export const Layout = () => {
             <aside style={{ background: 'var(--color-bg-secondary)', padding:20, borderRight: '1px solid #ddd'}}>
                 <h2 style={{ color: 'var(--color-primary)', }}>CollabBoard</h2>
                 <div style={{ marginTop: 40, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                    <NavLink to="/board" style={{isActive}} => </div>></NavLink>
+                <NavLink to="/board" style={({isActive}) => ({ 
+                    padding: 10, textDecoration: 'none', color: isActive ? 'var(--color-primary)' : 'inherit', fontWeight: isActive ? 'bold' : 'normal'
+                })}><FaColumns /> Board</NavLink>
                 </div>
                 
             </aside>
