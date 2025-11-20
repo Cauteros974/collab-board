@@ -18,6 +18,9 @@ export const useTaskStore = create<TaskStore> () (
             tasks: [],
             addTask: (title, status) => set((state) =>{
                 toast.success('Task created');
+                return { tasks: [...state.tasks, { 
+                    id: uuidv4(), title, status, comments: [], createdAt: new Date().toISOString() 
+                }]};
             })
         })
     )
