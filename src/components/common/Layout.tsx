@@ -26,7 +26,7 @@ export const Layout = () => {
                     </div>
 
                     <button onClick={logout} style={{ cursor: 'pointer', background: 'none', border: 'none', color: 'red' }}>
-
+                        <FaSignOutAlt /> SignOut
                     </button>
                 </div>
             </aside>
