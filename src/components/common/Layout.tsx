@@ -8,7 +8,9 @@ export const Layout = () => {
 
     return(
         <div style={{ display: 'grid', gridTemplateColumns: '250px 1fr', height: '100vh' }}>
-            <aside style={{ background: 'var(--color-bg-secondary)', padding:20}}
+            <aside style={{ background: 'var(--color-bg-secondary)', padding:20, borderRight: '1px solid #ddd'}}>
+                <h2 style={{ color: 'var(--color-primary)', }}>CollabBoard</h2>
+            </aside>
         </div>
     )
 }
