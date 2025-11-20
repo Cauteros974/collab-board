@@ -10,6 +10,10 @@ export const Layout = () => {
         <div style={{ display: 'grid', gridTemplateColumns: '250px 1fr', height: '100vh' }}>
             <aside style={{ background: 'var(--color-bg-secondary)', padding:20, borderRight: '1px solid #ddd'}}>
                 <h2 style={{ color: 'var(--color-primary)', }}>CollabBoard</h2>
+                <div style={{ marginTop: 40, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    <NavLink to="/board" style={{isActive}} => </div>></NavLink>
+                </div>
+                
             </aside>
         </div>
     )
