@@ -30,6 +30,10 @@ export const Layout = () => {
                     </button>
                 </div>
             </aside>
+            
+            <main style={{ padding: 20, overflow: 'auto', background: 'var(--color-bg-primary)'}}>
+                <Outlet />
+            </main>
         </div>
     )
 }
