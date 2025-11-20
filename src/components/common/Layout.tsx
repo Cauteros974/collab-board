@@ -25,8 +25,8 @@ export const Layout = () => {
                         <span>{user?.name}</span>
                     </div>
 
-                    <button>
-                        
+                    <button onClick={logout} style={{ cursor: 'pointer', background: 'none', border: 'none', color: 'red' }}>
+
                     </button>
                 </div>
             </aside>
