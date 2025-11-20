@@ -22,7 +22,12 @@ export const Layout = () => {
                 <div style={{ marginTop: 'auto', borderTop: '1px solid #ccc', paddingTop: 20 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
                         <img src={user?.avatar} style={{ width: 30, borderRadius: '50%' }} />
+                        <span>{user?.name}</span>
                     </div>
+
+                    <button>
+                        
+                    </button>
                 </div>
             </aside>
         </div>
