@@ -14,6 +14,12 @@ export const Layout = () => {
                 <NavLink to="/board" style={({isActive}) => ({ 
                     padding: 10, textDecoration: 'none', color: isActive ? 'var(--color-primary)' : 'inherit', fontWeight: isActive ? 'bold' : 'normal'
                 })}><FaColumns /> Board</NavLink>
+                <NavLink to="/dashboard" style={({isActive}) => ({ 
+                    padding: 10, textDecoration: 'none', color: isActive ? 'var(--color-primary)' : 'inherit', fontWeight: isActive ? 'bold' : 'normal'
+                })}><FaChartPie /> DashBoard</NavLink>
+                <NavLink to="/dashboard" style={({isActive}) => ({ 
+                    padding: 10, textDecoration: 'none', color: isActive ? 'var(--color-primary)' : 'inherit', fontWeight: isActive ? 'bold' : 'normal'
+                })}><FaSignOutAlt /> SignOut</NavLink>
                 </div>
                 
             </aside>
