@@ -11,3 +11,14 @@ interface TaskStore {
     updateTask: (id: string, updates: Partial<Task>) => void;
     addComment: (taskId: string, comment: Comment) => void;
 }
+
+export const useTaskStore = create<TaskStore> () (
+    persist(
+        (set) => ({
+            tasks: [],
+            addTask: (title, status) => set((state) =>{
+                toast.success('Task created');
+            })
+        })
+    )
+)
