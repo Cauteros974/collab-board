@@ -17,11 +17,13 @@ export const Layout = () => {
                 <NavLink to="/dashboard" style={({isActive}) => ({ 
                     padding: 10, textDecoration: 'none', color: isActive ? 'var(--color-primary)' : 'inherit', fontWeight: isActive ? 'bold' : 'normal'
                 })}><FaChartPie /> DashBoard</NavLink>
-                <NavLink to="/dashboard" style={({isActive}) => ({ 
-                    padding: 10, textDecoration: 'none', color: isActive ? 'var(--color-primary)' : 'inherit', fontWeight: isActive ? 'bold' : 'normal'
-                })}><FaSignOutAlt /> SignOut</NavLink>
                 </div>
                 
+                <div style={{ marginTop: 'auto', borderTop: '1px solid #ccc', paddingTop: 20 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+                        <img src={user?.avatar} style={{ width: 30, borderRadius: '50%' }} />
+                    </div>
+                </div>
             </aside>
         </div>
     )
