@@ -7,6 +7,8 @@ export const Layout = () => {
     const {user, logout} = useAuthStore();
 
     return(
-        
+        <div style={{ display: 'grid', gridTemplateColumns: '250px 1fr', height: '100vh' }}>
+            <aside style={{ background: 'var(--color-bg-secondary)', padding:18}}
+        </div>
     )
 }
