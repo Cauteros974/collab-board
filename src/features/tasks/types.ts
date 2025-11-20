@@ -5,3 +5,10 @@ export interface User {
     name: string;
     avatar: string;
 }
+
+export interface Comment {
+    id: string;
+    text: string;
+    author: User;
+    createAd: string;
+}
