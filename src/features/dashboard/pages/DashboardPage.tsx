@@ -23,8 +23,19 @@ export const DashboardPage = () => {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 40 }}>
                 <div className="stats-card" style={{background: 'var(--color-bg-primary)', padding: 20, borderRadius: 8}}>
                     <h3>Total tasks</h3>
-                    <p style={{fontSize: 32, fontWeight: 'bold', color: 'var(--color-success)'}}>{progress}</p>
+                    <p style={{fontSize: 32, fontWeight: 'bold', color: 'var(--color-success)'}}>{progress}%</p>
                 </div>
+            </div>
+
+            {/*Schedule*/}
+            <div style={{ height: 400, background: 'var(--color-bg-primary)', padding: 20, borderRadius: 8 }}>
+                <h3>Distribution by status</h3>
+                <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={data}>
+                        <XAxis dataKey="name" stroke="var(--color-text-secondary)" />
+                        <YAxis stroke="var(--color-text-secondary" allowDecimals={false}/>
+                    </BarChart>
+                </ResponsiveContainer>
             </div>
         </div>
     )
