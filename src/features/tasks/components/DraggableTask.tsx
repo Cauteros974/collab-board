@@ -33,6 +33,6 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
 
     return(
         <div ref = {setNodeRef} style={style} {...listeners} {...attributes} onClick={onClick}>
-            <div style={{ fontWeight: 500}}>{task.comments}</div>
+            <div style={{ fontWeight: 500}}>{task.comments.length}</div>
         </div>
     )
