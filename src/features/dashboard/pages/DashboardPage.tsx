@@ -38,9 +38,15 @@ export const DashboardPage = () => {
                             contentStyle={{backgroundColor: 'var(--color-bg-primary)', borderRadius: 8}}
                             cursor = {{fill: 'transport'}}
                         />
+
+                        <Bar dataKey="count" radius={[4, 4, 0, 0]}>
+                            {data.map((entry, index) => (
+                                <Cell key={`cell-${index}`} fill={entry.color} />
+                            ))}
+                        </Bar>
                     </BarChart>
                 </ResponsiveContainer>
             </div>
         </div>
-    )
-}
+    );
+};
