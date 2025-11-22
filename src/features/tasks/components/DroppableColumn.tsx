@@ -29,6 +29,9 @@ export const DroppableColumn: React.FC<Props> = ({ id, title, children }) => {
                 marginBottom: '16px', 
                 color: 'var(--color-text-secondary)',
                 fontSize: '14px',
+                textTransform: 'uppercase' as const,
+                letterSpacing: '1px',
+                fontWeight: 600
             }}>
                 {title}
             </h3>
