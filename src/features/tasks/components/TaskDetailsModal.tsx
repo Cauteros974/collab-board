@@ -58,6 +58,13 @@ export const TaskDetailsModal: React.FC<Props> = ({ taskId, onClose }) => {
                         />
                     )}
                 </div>
+
+                <div className="comments-section" style={{ marginTop: 30, borderTop: '1px solid #eee' }}>
+                    <h3>Comments (Demo)</h3>
+                    <div style={{background: '#f4f5f7', padding: 10, borderRadius: 8}}>
+                        <strong>User 1:</strong> Excellent task, I'll get started!
+                    </div>
+                </div>
             </div>
         </div>
     )
