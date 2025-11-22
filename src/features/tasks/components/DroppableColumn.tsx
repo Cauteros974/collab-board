@@ -12,4 +12,10 @@ export const DroppableColumn: React.FC<Props> = ({ id, title, children }) => {
     const { setNodeRef, isOver } = useDroppable({
       id: id,
     });
+
+    const Style = {
+        background: isOver ? 'rgba(0, 82, 204, 0.1)' : 'var(--color-bg-secondary)',
+        padding: '11px',
+
+    }
 }
