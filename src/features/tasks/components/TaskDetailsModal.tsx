@@ -1,0 +1,20 @@
+import React, {useState} from "react";
+import MarkDownIt from 'markdown-it';
+import DOMPurify from 'dompurify';
+import { useTaskStore } from "../store";
+import { type Task } from "../types";
+import styles from './TaskDetails.module.css';
+
+const md = new MarkDownIt();
+
+interface Props {
+    taskId: string | null;
+    onClose: () => void;
+}
+
+export const TaskDetailsModal: React.FC<Props> = ({ taskId, onClose }) => {
+    const task = useTaskStore(state => state.tasks.find(t => t.id === taskId));
+    const updateTask = useTaskStore(state => state.updateTask); //To add in store
+    const [isEditing, setIsEditing] = useState(false);
+    const [description, setDescription] = useState(task ?.description || '');
+}
