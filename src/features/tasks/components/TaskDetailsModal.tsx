@@ -28,5 +28,16 @@ export const TaskDetailsModal: React.FC<Props> = ({ taskId, onClose }) => {
     const renderMarkdown = (text: string) => {
         const rawHtml = md.render(text || '*No description*');
         return { __html: DOMPurify.sanitize(rawHtml)};
-    }
+    };
+    
+    return(
+        <div className="modal-overlay" onClick={onClose}>
+            <div className="modal-content" onClick={e => e.stopPropagation()}>
+                <h2>{task.title}</h2>
+                <span className={`badge badge-${task.status}`}>{task.status}</span>
+
+                
+            </div>
+        </div>
+    )
 }
