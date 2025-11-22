@@ -11,3 +11,9 @@
     font-family: inherit;
 }
 
+
+
+.primary {
+    background-color: var(--color-primary);
+    color: white;
+  }
