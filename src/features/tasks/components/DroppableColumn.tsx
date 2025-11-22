@@ -35,6 +35,9 @@ export const DroppableColumn: React.FC<Props> = ({ id, title, children }) => {
             }}>
                 {title}
             </h3>
+            <div style={{ flex: 1}}>
+                {children}
+            </div>
         </div>
-    )
-}
+    );
+};
