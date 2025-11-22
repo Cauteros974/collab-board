@@ -36,7 +36,7 @@ export const TaskDetailsModal: React.FC<Props> = ({ taskId, onClose }) => {
                 <h2>{task.title}</h2>
                 <span className={`badge badge-${task.status}`}>{task.status}</span>
 
-                
+                <div className="description-section" style={{marginTop: 10}}></div>
             </div>
         </div>
     )
