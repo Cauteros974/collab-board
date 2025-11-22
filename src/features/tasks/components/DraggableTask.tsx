@@ -19,4 +19,9 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
         backgroundColor: 'var(--color-bg-primary)',
         marginBottom: '10px',
         borderRadius: '6px',
+        boxShadow: isDragging 
+        ? '0 5px 15px rgba(0,0,0,0.15)' 
+        : 'var(--shadow-sm)',
+        border: '1px solid rgba(0,0,0,0.05)',
+        cursor: 'grab',
     }
