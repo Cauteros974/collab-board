@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { toast } from 'sonner';
 import { type User } from '../tasks/types';
 
 interface AuthStore {
@@ -16,9 +17,11 @@ export const useAuthStore = create<AuthStore>((set) => ({
     };
     localStorage.setItem('user', JSON.stringify(user));
     set({ user });
+    toast.success(`Welcome, ${name}!`);
   },
   logout: () => {
     localStorage.removeItem('user');
     set({ user: null });
+    toast('You have been logged out.');
   },
 }));
