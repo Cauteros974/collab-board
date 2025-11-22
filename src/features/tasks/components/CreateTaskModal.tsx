@@ -70,7 +70,6 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
             <Button type="button" variant="secondary" onClick={onClose}>Cancel</Button>
             <Button type="submit">Create</Button>
           </div>
-
         </form>
       </div>
     </div>
