@@ -10,5 +10,5 @@ export const Button: React.FC<ButtonProps> = ({
     children,
     className,
     variant = 'primary',
-    ..props
+    ...props
 })
