@@ -2,7 +2,7 @@ import React from 'react';
 import { useTaskStore } from '../store';
 import { type Status } from '../types';
 import { Button } from '../../../components/ui/Button/Button/Button';
-import styles from './BoardPage.module.css';
+import './BoardPage.mode.css';
 
 const COLUMNS: { id: Status; label: string }[] = [
   { id: 'todo', label: 'To be carried out' },
@@ -42,7 +42,7 @@ export const BoardPage = () => {
                     {/* An example of a very simple status change */}
                     {col.id !== 'done' && (
                       <button onClick={() => moveTask(task.id, 'done')} style={{ marginRight: '5px' }}>
-                         Done ->
+                         Done 
                       </button>
                     )}
                   </div>
