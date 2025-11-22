@@ -23,5 +23,10 @@ export const TaskDetailsModal: React.FC<Props> = ({ taskId, onClose }) => {
     const handleSave = () => {
         updateTask(taskId, { description });
         setIsEditing(false);
+    };
+
+    const renderMarkdown = (text: string) => {
+        const rawHtml = md.render(text || '*No description*');
+        return { __html: DOMPurify.sanitize(rawHtml)};
     }
 }
