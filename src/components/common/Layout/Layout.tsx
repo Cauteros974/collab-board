@@ -30,6 +30,10 @@ export const Layout: React.FC = () => {
                     </button>
                 </div>
             </aside>
+
+            <main className={styles.content}>
+                <Outlet />
+            </main>
         </div>
-    )
-}
+    );
+};
