@@ -34,6 +34,10 @@ export const DashboardPage = () => {
                     <BarChart data={data}>
                         <XAxis dataKey="name" stroke="var(--color-text-secondary)" />
                         <YAxis stroke="var(--color-text-secondary" allowDecimals={false}/>
+                        <Tooltip
+                            contentStyle={{backgroundColor: 'var(--color-bg-primary)', borderRadius: 8}}
+                            cursor = {{fill: 'transport'}}
+                        />
                     </BarChart>
                 </ResponsiveContainer>
             </div>
