@@ -23,6 +23,7 @@ export const DashboardPage = () => {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 40 }}>
                 <div className="stats-card" style={{background: 'var(--color-bg-primary)', padding: 20, borderRadius: 8}}>
                     <h3>Total tasks</h3>
+                    <p style={{fontSize: 32, fontWeight: 'bold', color: 'var(--color-success)'}}>{progress}</p>
                 </div>
             </div>
         </div>
