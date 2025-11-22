@@ -67,5 +67,5 @@ export const TaskDetailsModal: React.FC<Props> = ({ taskId, onClose }) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
