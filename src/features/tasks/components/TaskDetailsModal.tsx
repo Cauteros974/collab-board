@@ -49,6 +49,13 @@ export const TaskDetailsModal: React.FC<Props> = ({ taskId, onClose }) => {
                         />
                         <button onClick={handleSave}>Save</button>
                       </div>
+                    ):(
+                        <div 
+                            className="markdown-preview"
+                            onClick={() => setIsEditing(true)}
+                            dangerouslySetInnerHTML={renderMarkdown(task.description || '')}
+                            style={{ cursor: 'pointer', padding: 10, border: '1px dashed #ccc' }}
+                        />
                     )}
                 </div>
             </div>
