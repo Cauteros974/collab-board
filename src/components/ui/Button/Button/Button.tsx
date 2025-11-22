@@ -11,4 +11,13 @@ export const Button: React.FC<ButtonProps> = ({
     className,
     variant = 'primary',
     ...props
-})
+}) => {
+    return(
+        <button 
+            className={clsx(styles.button, styles[variant], className)} 
+            {...props}
+        >
+            {children}
+        </button>
+    );
+};
