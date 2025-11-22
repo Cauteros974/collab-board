@@ -29,3 +29,24 @@
     flex-direction: column;
     gap: 8px;
 }
+
+.navItem {
+    padding: 10px 16px;
+    border-radius: var(--border-radius);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s;
+}
+  
+.navItem:hover, .active {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-primary);
+}
+  
+.content {
+    padding: 30px;
+    overflow-y: auto;
+}
