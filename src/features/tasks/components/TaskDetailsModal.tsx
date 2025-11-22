@@ -18,7 +18,7 @@ export const TaskDetailsModal: React.FC<Props> = ({ taskId, onClose }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [description, setDescription] = useState(task ?.description || '');
 
-    if(!task || taskId) return null;
+    if(!task || !taskId) return null;
 
     const handleSave = () => {
         updateTask(taskId, { description });
