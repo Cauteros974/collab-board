@@ -45,11 +45,11 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
       <div style={{
         background: 'var(--color-bg-primary)', padding: 24, borderRadius: 12, width: 400
       }}>
-        <h2>Новая задача</h2>
+        <h2>New task</h2>
         <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           
           <div>
-            <label style={{ display: 'block', marginBottom: 4 }}>Заголовок</label>
+            <label style={{ display: 'block', marginBottom: 4 }}>Title</label>
             <input 
               {...register('title')} 
               style={{ width: '100%', padding: 8, borderRadius: 6, border: '1px solid #ccc' }} 
@@ -58,11 +58,11 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
           </div>
 
           <div>
-            <label style={{ display: 'block', marginBottom: 4 }}>Статус</label>
+            <label style={{ display: 'block', marginBottom: 4 }}>Status</label>
             <select {...register('status')} style={{ width: '100%', padding: 8 }}>
               <option value="todo">К выполнению</option>
-              <option value="in-progress">В работе</option>
-              <option value="done">Готово</option>
+              <option value="in-progress">At work</option>
+              <option value="done">Done</option>
             </select>
           </div>
 
