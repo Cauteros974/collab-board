@@ -36,7 +36,21 @@ export const TaskDetailsModal: React.FC<Props> = ({ taskId, onClose }) => {
                 <h2>{task.title}</h2>
                 <span className={`badge badge-${task.status}`}>{task.status}</span>
 
-                <div className="description-section" style={{marginTop: 10}}></div>
+                <div className="description-section" style={{marginTop: 20}}>
+                    <h3>No Description</h3>
+                    {isEditing ? (
+                        <div>
+                        <textarea 
+                          value={description} 
+                          onChange={(e) => setDescription(e.target.value)}
+                          rows={6}
+                          style={{ width: '100%', padding: 10 }}
+                          placeholder="Supports Markdown: **bold**, - list..."
+                        />
+                        <button onClick={handleSave}>Save</button>
+                      </div>
+                    )}
+                </div>
             </div>
         </div>
     )
