@@ -3,7 +3,7 @@ import MarkDownIt from 'markdown-it';
 import DOMPurify from 'dompurify';
 import { useTaskStore } from "../store";
 import { type Task } from "../types";
-import styles from './TaskDetails.module.css';
+/*import styles from './TaskDetails.module.css';*/
 
 const md = new MarkDownIt();
 

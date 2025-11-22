@@ -1,77 +1,38 @@
-import React, { useState } from 'react';
-import { DndContext } from '@dnd-kit/core';
-import type { DragEndEvent } from '@dnd-kit/core';
+import { DndContext, type DragEndEvent } from '@dnd-kit/core';
+import { useState } from 'react';
 import { useTaskStore } from '../store';
-import { type Status } from '../types';
-import { Button } from '../../../components/ui/Button/Button/Button';
-import { CreateTaskModal } from '../components/CreateTaskModal';
-import { DroppableColumn } from '../components/DroppableColumn';
-import { DraggableTask } from '../components/DraggableTask';
+import { DraggableTask } from '../components/DraggableTask'; // Создай файл
+import { DroppableColumn } from '../components/DroppableColumn'; // Создай файл
+import { CreateTaskModal } from '../components/CreateTaskModal'; // Из предыдущих ответов
+import { TaskDetailsModal } from '../components/TaskDetailsModal'; // Из предыдущих ответов
 
 export const BoardPage = () => {
   const { tasks, moveTask } = useTaskStore();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedTask, setSelectedTask] = useState<string | null>(null);
+  const [isCreateOpen, setCreateOpen] = useState(false);
 
-  // Drag completion logic
-  const handleDragEnd = (event: DragEndEvent) => {
-    const { active, over } = event;
-
-    if (over && active.id !== over.id) {
-      // active.id - ID tasks
-      // over.id - This is the column ID (because we made the columns drop zones)
-      
-      // Checking if over.id is a valid status
-      const newStatus = over.id as Status;
-      moveTask(active.id as string, newStatus);
-    }
+  const handleDragEnd = (e: DragEndEvent) => {
+    if (e.over && e.active.id !== e.over.id) moveTask(e.active.id as string, e.over.id as any);
   };
-
-  const handleTaskClick = (taskId: string) => {
-    console.log('Task clicked:', taskId);
-  };
-
-  const columns: { id: Status; title: string }[] = [
-    { id: 'todo', title: 'To be carried out' },
-    { id: 'in-progress', title: 'In progress' },
-    { id: 'done', title: 'Ready' },
-  ];
 
   return (
     <DndContext onDragEnd={handleDragEnd}>
-      <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
-          <h1>Kanban Board</h1>
-          <Button onClick={() => setIsModalOpen(true)}>+ Add a task</Button>
-        </div>
-
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(3, 1fr)', 
-          gap: '20px', 
-          height: '100%',
-          alignItems: 'start' 
-        }}>
-          {columns.map((col) => (
-            <DroppableColumn key={col.id} id={col.id} title={col.title}>
-              {tasks
-                .filter((task) => task.status === col.id)
-                .map((task) => (
-                  <DraggableTask 
-                    key={task.id} 
-                    task={task}
-                    onClick={() => handleTaskClick(task.id)}
-                  />
-                ))}
-              {/* An empty block so that the column doesn't collapse if there are no tasks */}
-              {tasks.filter(t => t.status === col.id).length === 0 && (
-                <div style={{ height: 50, border: '2px dashed #ccc', borderRadius: 6, opacity: 0.5 }} />
-              )}
-            </DroppableColumn>
-          ))}
-        </div>
-
-        <CreateTaskModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <div style={{ marginBottom: 20 }}>
+         <button onClick={() => setCreateOpen(true)} style={{ padding: '10px 20px', background: 'var(--color-primary)', color: 'white', border: 'none', borderRadius: 4 }}>+ Новая задача</button>
       </div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+        {['todo', 'in-progress', 'done'].map(status => (
+          <DroppableColumn key={status} id={status} title={status.toUpperCase()}>
+            {tasks.filter(t => t.status === status).map(t => (
+              <div key={t.id} onClick={() => setSelectedTask(t.id)}>
+                <DraggableTask task={t} onClick={() => setSelectedTask(t.id)} />
+              </div>
+            ))}
+          </DroppableColumn>
+        ))}
+      </div>
+      <CreateTaskModal isOpen={isCreateOpen} onClose={() => setCreateOpen(false)} />
+      {selectedTask && <TaskDetailsModal taskId={selectedTask} onClose={() => setSelectedTask(null)} />}
     </DndContext>
   );
 };
