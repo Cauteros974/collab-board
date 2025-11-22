@@ -60,15 +60,15 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
           <div>
             <label style={{ display: 'block', marginBottom: 4 }}>Status</label>
             <select {...register('status')} style={{ width: '100%', padding: 8 }}>
-              <option value="todo">К выполнению</option>
+              <option value="todo">To be fulfilled</option>
               <option value="in-progress">At work</option>
               <option value="done">Done</option>
             </select>
           </div>
 
           <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end', marginTop: 10 }}>
-            <Button type="button" variant="secondary" onClick={onClose}>Отмена</Button>
-            <Button type="submit">Создать</Button>
+            <Button type="button" variant="secondary" onClick={onClose}>Cancel</Button>
+            <Button type="submit">Create</Button>
           </div>
 
         </form>
