@@ -4,3 +4,8 @@
     height: 100vg;
     background-color: var(--color-bg-secondary);
 }
+
+.sidebar{
+    background-color: var(--color-bg-secondary);
+    border-right: 1px solid rgba(0,0,0,0.1);
+}
