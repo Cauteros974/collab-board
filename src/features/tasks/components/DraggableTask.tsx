@@ -29,4 +29,8 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
         flexDirection: 'column' as const,
         gap: '8px',
         transition: 'box-shadow 0.2s, opacity 0.2s',
-    }
+    };
+
+    return(
+        <div ref = {setNodeRef} style={style} {...listeners}
+    )
