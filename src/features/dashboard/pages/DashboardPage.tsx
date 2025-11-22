@@ -10,5 +10,8 @@ export const DashboardPage = () => {
         { name: 'To Do', count: tasks.filter(t => t.status === 'todo').length, color: '#ff5630' },
         { name: 'In Progress', count: tasks.filter(t => t.status === 'in-progress').length, color: '#0052cc' },
         { name: 'Done', count: tasks.filter(t => t.status === 'done').length, color: '#36b37e' },
-    ]
+    ];
+
+    const totalTasks = tasks.length;
+    const progress = totalTasks ? Math.round((tasks.filter(t => t.status === 'done').length / totalTasks) * 100) : 0;
 }
