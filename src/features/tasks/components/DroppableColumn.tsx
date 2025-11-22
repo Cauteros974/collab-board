@@ -22,4 +22,14 @@ export const DroppableColumn: React.FC<Props> = ({ id, title, children }) => {
         displey: 'flex',
         flexDirection: 'column' as const,
     };
+
+    return(
+        <div ref={setNodeRef} style={style}>
+            <h3 style={{
+                
+            }}>
+                {title}
+            </h3>
+        </div>
+    )
 }
