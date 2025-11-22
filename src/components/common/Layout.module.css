@@ -8,4 +8,7 @@
 .sidebar{
     background-color: var(--color-bg-secondary);
     border-right: 1px solid rgba(0,0,0,0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
