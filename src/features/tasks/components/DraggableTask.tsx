@@ -24,4 +24,7 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
         : 'var(--shadow-sm)',
         border: '1px solid rgba(0,0,0,0.05)',
         cursor: 'grab',
+        opacity: isDragging ? 0.5 : 1,
+        display: 'flex',
+        flexDirection: 'column' as const,
     }
