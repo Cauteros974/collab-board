@@ -26,7 +26,9 @@ export const DroppableColumn: React.FC<Props> = ({ id, title, children }) => {
     return(
         <div ref={setNodeRef} style={style}>
             <h3 style={{
-                
+                marginBottom: '16px', 
+                color: 'var(--color-text-secondary)',
+                fontSize: '14px',
             }}>
                 {title}
             </h3>
