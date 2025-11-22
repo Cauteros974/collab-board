@@ -6,11 +6,11 @@ import { useTaskStore } from '../store';
 import { Button } from '../../../components/ui/Button/Button/Button';
 import { type Status } from '../types';
 
-// 1. Схема валидации
+//Validation scheme
 const taskSchema = z.object({
-  title: z.string().min(2, 'Минимум 2 символа').max(50, 'Максимум 50'),
-  description: z.string().optional(),
-  status: z.enum(['todo', 'in-progress', 'done']),
+    title: z.string().min(2, 'Minimum 2 characters').max(50, 'Maximum 50'),
+    description: z.string().optional(),
+    status: z.enum(['todo', 'in-progress', 'done']),
 });
 
 type TaskFormValues = z.infer<typeof taskSchema>;
@@ -23,7 +23,7 @@ interface Props {
 export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
   const addTask = useTaskStore((state) => state.addTask);
   
-  // 2. Хук формы
+  //Hook form
   const { register, handleSubmit, formState: { errors }, reset } = useForm<TaskFormValues>({
     resolver: zodResolver(taskSchema),
     defaultValues: { status: 'todo' }
