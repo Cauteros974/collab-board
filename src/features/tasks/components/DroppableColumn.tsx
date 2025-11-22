@@ -15,7 +15,7 @@ export const DroppableColumn: React.FC<Props> = ({ id, title, children }) => {
 
     const Style = {
         background: isOver ? 'rgba(0, 82, 204, 0.1)' : 'var(--color-bg-secondary)',
-        padding: '16px',
+        padding: '20px',
 
     }
 }
