@@ -14,4 +14,17 @@ export const DashboardPage = () => {
 
     const totalTasks = tasks.length;
     const progress = totalTasks ? Math.round((tasks.filter(t => t.status === 'done').length / totalTasks) * 100) : 0;
+
+    return(
+        <div style={{ padding: 20}}>
+            <h1>Dashboard project</h1>
+
+            {/*Statistics cards*/}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 40 }}>
+                <div className="stats-card" style={{background: 'var(--color-bg-primary)', padding: 20, borderRadius: 8}}>
+                    <h3>Total tasks</h3>
+                </div>
+            </div>
+        </div>
+    )
 }
