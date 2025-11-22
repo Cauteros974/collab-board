@@ -3,8 +3,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useTaskStore } from '../store';
-import { Button } from '../../../components/ui/Button/Button';
-import { Status } from '../types';
+import { Button } from '../../../components/ui/Button/Button/Button';
+import { type Status } from '../types';
 
 // 1. Схема валидации
 const taskSchema = z.object({
@@ -30,7 +30,7 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
   });
 
   const onSubmit = (data: TaskFormValues) => {
-    addTask(data.title, data.status as Status); // В реальном проекте добавь description в store
+    addTask(data.title, data.status as Status);
     reset();
     onClose();
   };
@@ -38,7 +38,6 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    // Простейший оверлей (лучше вынести в UI компонент Modal)
     <div style={{
       position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', 
       display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000
