@@ -25,7 +25,7 @@ export const Layout: React.FC = () => {
 
                 <div style={{ marginTop: 'auto'}}>
                     <button onClick={toggleTheme} className={styles.navItem} style={{ width: '100%', border: 'none', background: 'transparent', cursor: 'pointer'}}>
-                        
+                        {theme === 'dark' }
                     </button>
                 </div>
             </aside>
