@@ -19,6 +19,7 @@ export const DroppableColumn: React.FC<Props> = ({ id, title, children }) => {
         borderRadius: '12px',
         minHeight: '500px',
         transition: 'background-color 0.2s',
-        
-    }
+        displey: 'flex',
+        flexDirection: 'column' as const,
+    };
 }
