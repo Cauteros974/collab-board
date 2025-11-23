@@ -63,9 +63,14 @@ export const LoginPage = () => {
                         }}
                         onFocus={(e) => e.target.style.borderColor = 'var(--color-primary)'}
                         onBlur={(e) => e.target.style.borderColor = '#ddd'}
-                    >
-                    </input>
+                    />
                 </div>
+
+                <button
+                    type="submit"
+                    disabled={!name.trim()}
+                    
+                />
             </form>
         </div>
     )
