@@ -12,7 +12,8 @@ export const useAuthStore = create<AuthStore>((set) => ({
   user: JSON.parse(localStorage.getItem('user') || 'null'),
   login: (name) => {
     const user = { 
-      id: 'u1', name, 
+      id: 'u1', 
+      name, 
       avatar: `https://ui-avatars.com/api/?name=${name}&background=random` 
     };
     localStorage.setItem('user', JSON.stringify(user));
