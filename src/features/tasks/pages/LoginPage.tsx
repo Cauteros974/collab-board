@@ -44,7 +44,7 @@ export const LoginPage = () => {
                 </div>
                 
                 <div style={{ marginBottom: '20px'}}>
-                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 200}}
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500}}
                 </div>
             </form>
         </div>
