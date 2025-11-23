@@ -1,29 +1,27 @@
-import { createBrowserRouter } from "react-router-dom";
-import { Layout } from "../components/common/Layout/Layout";
-import { BoardPage } from "../features/tasks/pages/BoardPage";
-import { DashboardPage } from "../features/dashboard/pages/DashboardPage";
+import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { Layout } from '../components/common/Layout/Layout';
+import { BoardPage } from '../features/tasks/pages/BoardPage';
+import { DashboardPage } from '../features/dashboard/pages/DashboardPage';
+import { LoginPage } from '../features/auth/pages/LoginPage';
 
-
-export const router = createBrowserRouter(
-  [
-    {
-      path: '/',
-      element: <div style={{ padding: 20 }}>Welcome to CollabBoard</div>,
-      children: [
-        {
-          path: 'board',
-          element: <BoardPage />,
-        },
-        {
-          path: 'chat',
-          element: <div>The chat will be here soon</div>,
-        },
-      ],
-    },
-  ],
+export const router = createBrowserRouter([
   {
-    future: {
-      v7_startTransition: true,
-    },
-  }
-);
+    path: '/login',
+    element: <LoginPage />,
+  },
+  {
+    path: '/',
+    
+    element: <Layout />, 
+    children: [
+      // If the user simply visited the site, we redirect them to /board
+      { index: true, element: <Navigate to="/board" replace /> },
+      
+      // The board page itself
+      { path: 'board', element: <BoardPage /> },
+      
+      // Dashboard page
+      { path: 'dashboard', element: <DashboardPage /> },
+    ],
+  },
+]);
