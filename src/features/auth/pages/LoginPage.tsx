@@ -51,6 +51,18 @@ export const LoginPage = () => {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    placeholder="For example, Alex"
+                    style={{ 
+                        width: '100%', 
+                        padding: '12px', 
+                        borderRadius: '8px', 
+                        border: '1px solid #ddd',
+                        fontSize: '16px',
+                        outline: 'none',
+                        transition: 'border-color 0.2s'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = 'var(--color-primary)'}
+                    onBlur={(e) => e.target.style.borderColor = '#ddd'}
                 />
                 </div>
 
