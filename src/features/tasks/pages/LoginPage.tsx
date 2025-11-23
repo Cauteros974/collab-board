@@ -44,7 +44,21 @@ export const LoginPage = () => {
                 </div>
                 
                 <div style={{ marginBottom: '20px'}}>
-                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500}}
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500, fontSize: '14px'}}>
+                        Your Name
+                    </label>
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="For example, Alex"
+                        style={{
+                            width: '100%',
+                            padding: '10px',
+                            
+                        }}
+                    >
+                    </input>
                 </div>
             </form>
         </div>
