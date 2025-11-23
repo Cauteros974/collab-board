@@ -38,7 +38,21 @@ export const LoginPage = () => {
                     boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' 
                 }}
             >
-                <div style={{ textAlign: 'center', marginBottom: '30px'}}
+                <div style={{ textAlign: 'center', marginBottom: '30px'}}>
+                    <h2 style={{ color: 'var(--color-primary)', margin: 0, fontSize: '24px' }}>LogIn to CollabBoard</h2>
+                    <p style={{ color: 'var(--color-text-secondary', marginTop: '8px'}}>Please enter your name to continue</p>
+                </div>
+
+                <div style={{marginBottom: '20px'}}>
+                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500, fontSize: '14px' }}>
+                    Your Name
+                </label>
+                <input 
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+                </div>
 
             </form>
         </div>
