@@ -43,6 +43,9 @@ export const LoginPage = () => {
                     <p style={{ color: 'var(--color-text-secondary)', marginTop: '8px' }}>Please enter your name to continue</p>
                 </div>
                 
+                <div style={{ marginBottom: '20px'}}>
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 200}}
+                </div>
             </form>
         </div>
     )
