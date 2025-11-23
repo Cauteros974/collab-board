@@ -1,10 +1,10 @@
 import { DndContext, type DragEndEvent } from '@dnd-kit/core';
 import { useState } from 'react';
 import { useTaskStore } from '../store';
-import { DraggableTask } from '../components/DraggableTask'; // Создай файл
-import { DroppableColumn } from '../components/DroppableColumn'; // Создай файл
-import { CreateTaskModal } from '../components/CreateTaskModal'; // Из предыдущих ответов
-import { TaskDetailsModal } from '../components/TaskDetailsModal'; // Из предыдущих ответов
+import { DraggableTask } from '../components/DraggableTask'; 
+import { DroppableColumn } from '../components/DroppableColumn';
+import { CreateTaskModal } from '../components/CreateTaskModal';
+import { TaskDetailsModal } from '../components/TaskDetailsModal';
 
 export const BoardPage = () => {
   const { tasks, moveTask } = useTaskStore();
@@ -18,7 +18,7 @@ export const BoardPage = () => {
   return (
     <DndContext onDragEnd={handleDragEnd}>
       <div style={{ marginBottom: 20 }}>
-         <button onClick={() => setCreateOpen(true)} style={{ padding: '10px 20px', background: 'var(--color-primary)', color: 'white', border: 'none', borderRadius: 4 }}>+ Новая задача</button>
+         <button onClick={() => setCreateOpen(true)} style={{ padding: '10px 20px', background: 'var(--color-primary)', color: 'white', border: 'none', borderRadius: 4 }}>+ New Task</button>
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
         {['todo', 'in-progress', 'done'].map(status => (
