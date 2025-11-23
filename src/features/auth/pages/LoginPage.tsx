@@ -11,6 +11,9 @@ export const LoginPage = () => {
         e.preventDefault();
         if(!name.trim()) return;
 
+        //Save the user in the store
+        login(name);
+
         //Redirect to the board
         navigate('/board');
     };
@@ -22,6 +25,7 @@ export const LoginPage = () => {
             alignItems: 'center',
             justifyContent: 'center',
             background: 'var(--color-bg-primary)',
+            padding: '20px'
         }}
     )
 }
