@@ -7,13 +7,39 @@ export const LoginPage = () => {
     const login = useAuthStore((state) => state.login);
     const navigate = useNavigate();
 
-    const hadleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!name.trim()) return;
 
         //Save the user in the store
-        login(name),
+        login(name);
 
         //Redirect to the Dashboard
-    }
+        navigate('/board');
+    };
+
+    return(
+        <div style={{ 
+            height: '100vh', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center',
+            background: 'var(--color-bg-secondary)',
+            padding: '20px'
+        }}>
+            <form
+                onSubmit={handleSubmit} 
+                style={{ 
+                  background: 'var(--color-bg-primary)', 
+                  padding: '40px', 
+                  borderRadius: '12px', 
+                  width: '100%',
+                  maxWidth: '400px',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' 
+                }}
+            >
+                
+            </form>
+        </div>
+    )
 }
