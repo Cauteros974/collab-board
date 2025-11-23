@@ -38,6 +38,7 @@ export const LoginPage = () => {
                     boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' 
                 }}
             >
+                <div style={{ textAlign: 'center', marginBottom: '20px'}}
 
             </form>
         </div>
