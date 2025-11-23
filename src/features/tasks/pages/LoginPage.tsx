@@ -54,8 +54,9 @@ export const LoginPage = () => {
                         placeholder="For example, Alex"
                         style={{
                             width: '100%',
-                            padding: '10px',
-                            
+                            padding: '12px',
+                            borderRadius: '8px', 
+                            border: '1px solid #ddd',
                         }}
                     >
                     </input>
