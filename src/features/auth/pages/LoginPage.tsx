@@ -66,7 +66,24 @@ export const LoginPage = () => {
                 />
                 </div>
 
-                
+                <button
+                    type="submit" 
+                    disabled={!name.trim()}
+                    style={{ 
+                        width: '100%', 
+                        padding: '12px', 
+                        background: name.trim() ? 'var(--color-primary)' : '#ccc',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '8px',
+                        fontSize: '16px',
+                        fontWeight: 600,
+                        cursor: name.trim() ? 'pointer' : 'not-allowed',
+                        transition: 'background 0.2s'
+                    }}
+                >
+                    LogIn
+                </button>
             </form>
         </div>
     )
