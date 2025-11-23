@@ -61,6 +61,8 @@ export const LoginPage = () => {
                             outline: 'none',
                             transition: 'border-color 0.2s'
                         }}
+                        onFocus={(e) => e.target.style.borderColor = 'var(--color-primary)'}
+                        onBlur={(e) => e.target.style.borderColor = '#ddd'}
                     >
                     </input>
                 </div>
