@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDraggable } from '@dnd-kit/core';
-import { type Task, Priority } from '../types';
+import { type Task, type Priority } from '../types';
 import { CSS } from '@dnd-kit/utilities';
 
 interface Props {
@@ -11,10 +11,12 @@ interface Props {
 const getPriorityColor = (priority: Priority) => {
     switch (priority) {
         case 'high':
-            return'var(--color-danger)'; //Use red color
+            return'var(--color-danger)'; //Use Red color
         case 'medium':
             return '#ffab00'; //Use Yellow/Orange
         case 'low':
+            return 'var(--color-success)'; //Use Green color
+        default:
             return '#ccc';
     }
 }
@@ -44,6 +46,13 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
 
     return(
         <div ref = {setNodeRef} style={style} {...listeners} {...attributes} onClick={onClick}>
+
+            <div style = {{ display: 'flex', alignItems: 'center', gap: '8px'}}>
+                <span 
+                    title={`Priority: ${task.priority.toUpperCase()}`}
+                />
+            </div>
+
             {/*Task title*/}
             <div style={{ fontWeight: 600, fontSize: '15px', color: 'var(--color-text-primary)' }}>
                 {task.title || 'Untitled'}
