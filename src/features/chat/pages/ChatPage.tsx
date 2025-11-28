@@ -67,6 +67,12 @@ export const ChatPage = () => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Write message..."
+                    style={{
+                        flex: 1,
+                        padding: '12px',
+                        borderRadius: '10px solid #ccc',
+                        outline: 'none'
+                    }}
                 />
             </form>
         </div>
