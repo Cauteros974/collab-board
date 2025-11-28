@@ -1,6 +1,7 @@
 import { DndContext, type DragEndEvent } from '@dnd-kit/core';
 import { useState } from 'react';
 import { useTaskStore } from '../store';
+import { type Status } from '../types';
 import { DraggableTask } from '../components/DraggableTask'; 
 import { DroppableColumn } from '../components/DroppableColumn';
 import { CreateTaskModal } from '../components/CreateTaskModal';
@@ -12,7 +13,9 @@ export const BoardPage = () => {
   const [isCreateOpen, setCreateOpen] = useState(false);
 
   const handleDragEnd = (e: DragEndEvent) => {
-    if (e.over && e.active.id !== e.over.id) moveTask(e.active.id as string, e.over.id as any);
+    if (e.over && e.active.id !== e.over.id) {
+      moveTask(e.active.id as string, e.over.id as Status);
+    }
   };
 
   return (
