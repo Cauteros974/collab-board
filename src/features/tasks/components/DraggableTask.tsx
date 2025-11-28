@@ -2,6 +2,7 @@ import React from 'react';
 import { useDraggable } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
 import { type Task, type Priority } from '../types'; 
+import { FaTrashAlt } from 'react-icons/fa';
 
 interface Props {
   task: Task;
