@@ -86,7 +86,9 @@ export const ChatPage = () => {
                         cursor: 'pointer',
                         fontWeight: 'bold'
                     }}
-                />
+                >
+                    Send
+                </button>
             </form>
         </div>
     )
