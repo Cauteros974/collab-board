@@ -7,6 +7,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 interface Props {
   task: Task;
   onClick: () => void;
+  onDelete: (taskId: string) => void; 
 }
 
 // Helper for getting priority color
