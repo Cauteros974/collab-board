@@ -30,9 +30,9 @@ export const BoardPage = () => {
          <button onClick={() => setCreateOpen(true)} style={{ padding: '10px 20px', background: 'var(--color-primary)', color: 'white', border: 'none', borderRadius: 4 }}>+ New Task</button>
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
-        {['todo', 'in-progress', 'done'].map(status => (
-          <DroppableColumn key={status} id={status} title={status.toUpperCase()}>
-            {tasks.filter(t => t.status === status).map(t => (
+        {columns.map(col => (
+          <DroppableColumn key={col.id} id={col.id} title={col.title}>
+            {tasks.filter(t => t.status === col.id).map(t => (
               <div key={t.id} onClick={() => setSelectedTask(t.id)}>
                 <DraggableTask task={t} onClick={() => setSelectedTask(t.id)} />
               </div>
