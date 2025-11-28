@@ -70,7 +70,7 @@ export const ChatPage = () => {
                     style={{
                         flex: 1,
                         padding: '12px',
-                        borderRadius: '10px solid #ccc',
+                        borderRadius: '1px solid #ccc',
                         outline: 'none'
                     }}
                 />
