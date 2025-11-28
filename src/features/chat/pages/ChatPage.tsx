@@ -27,6 +27,36 @@ export const ChatPage = () => {
     return(
         <div style={{ display: 'flex', flexDirection: 'column', height: 'calc(100vh - 40px)'}}>
             <h2 style={{marginBottom: '20px'}}>Team Chat</h2>
+
+            {/*Message area*/}
+            <div style={{
+                flex: 1, 
+                background: 'var(--color-bg-secondary)', 
+                borderRadius: '12px', 
+                padding: '20px', 
+                overflowY: 'auto',
+                marginBottom: '20px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '15px'
+            }}>
+                {messages.map((msg) => (
+                    <div key={msg.id} style={{ 
+                        alignSelf: msg.author === user?.name ? 'flex-end' : 'flex-start',
+                        maxWidth: '70%'
+                    }}>
+                        <div style={{ fontSize: '12px', color: '#888', marginBottom: '4px', textAlign: msg.author === user?.name ? 'right' : 'left' }}>
+                            {msg.author}, {msg.time}
+                        </div>
+                        <div style={{ 
+                            background: msg.author === user?.name ? 'var(--color-primary)' : 'white',
+                            color: msg.author === user?.name ? 'white' : 'black',
+                        }}>
+                            {msg.text}
+                        </div>
+                    </div>
+        ))}
+            </div>
         </div>
     )
 } ;
