@@ -1,11 +1,18 @@
 import React from 'react';
 import { useDraggable } from '@dnd-kit/core';
-import { type Task } from '../types';
+import { type Task, Priority } from '../types';
 import { CSS } from '@dnd-kit/utilities';
 
 interface Props {
     task: Task;
     onClick: () => void;
+}
+
+const getPriorityColor = (priority: Priority) => {
+    switch (priority) {
+        case 'high':
+            return'var(--color-danger)';
+    }
 }
 
 export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
