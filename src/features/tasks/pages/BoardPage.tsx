@@ -18,6 +18,10 @@ export const BoardPage = () => {
     }
   };
 
+  const columns: { id: Status; title: string }[] = [
+    
+  ];
+
   return (
     <DndContext onDragEnd={handleDragEnd}>
       <div style={{ marginBottom: 20 }}>
