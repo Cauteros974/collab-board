@@ -53,11 +53,12 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
                     style={{
                         width: '8px',
                         height: '8px',
-                        borderRadius: '50%'
+                        borderRadius: '50%',
+                        backgroundColor: getPriorityColor(task.priority), 
+                        flexShrink: 0 
                     }}
                 />
             </div>
-
             {/*Task title*/}
             <div style={{ fontWeight: 600, fontSize: '15px', color: 'var(--color-text-primary)' }}>
                 {task.title || 'Untitled'}
