@@ -11,7 +11,11 @@ interface Props {
 const getPriorityColor = (priority: Priority) => {
     switch (priority) {
         case 'high':
-            return'var(--color-danger)';
+            return'var(--color-danger)'; //Use red color
+        case 'medium':
+            return '#ffab00'; //Use Yellow/Orange
+        case 'low':
+            return '#ccc';
     }
 }
 
