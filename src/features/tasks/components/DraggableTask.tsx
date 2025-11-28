@@ -47,7 +47,9 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
                 color: 'var(--color-text-secondary)',
                 marginTop: '4px'
             }}>
-
+                <span style={{ background: 'rgba(0,0,0,0.05)', padding: '2px 6px', borderRadius: '4px', fontFamily: 'monospace' }}>
+                    #{task.id.slice(0, 4)}
+                </span>
             </div>
         </div>
     );
