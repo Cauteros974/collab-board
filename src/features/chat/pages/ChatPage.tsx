@@ -18,7 +18,9 @@ export const ChatPage = () => {
                 id: Data.now(),
                 text: input,
                 author: user?.name || 'Guest',
+                time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
             }
-        ])
+        ]);
+        setInput('');
     }
 } 
