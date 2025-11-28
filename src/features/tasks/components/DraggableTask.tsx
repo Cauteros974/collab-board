@@ -11,21 +11,17 @@ interface Props {
 }
 
 // Helper for getting priority color
-const getPriorityColor = (priority?: Priority) => {
+const getPriorityColor = (priority?: Priority): string => {
     switch (priority) {
-        case 'high':
-            return 'var(--color-danger)'; 
-        case 'medium':
-            return '#ffab00'; 
-        case 'low':
-            return 'var(--color-success)'; 
-        default:
-            return '#ccc';
+        case 'high': return 'var(--color-danger)'; 
+        case 'medium': return '#ffab00'; 
+        case 'low': return 'var(--color-success)'; 
+        default: return '#ccc';
     }
 }
 
 // Date formatting
-const formatDate = (isoString: string) => {
+const formatDate = (isoString: string): string => {
     const date = new Date(isoString);
     return date.toLocaleDateString('en-US', {
         day: 'numeric', 
@@ -33,16 +29,16 @@ const formatDate = (isoString: string) => {
     }).replace('.', '');
 }
 
-export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
+export const DraggableTask: React.FC<Props> = ({ task, onClick, onDelete }) => {
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
     id: task.id,
   });
 
   // Safely gaining priority
-  const priority = task.priority || 'low'; // Default value
+  const priority = task.priority || 'low';
   const priorityLabel = priority.toUpperCase();
 
-  const style = {
+  const style: React.CSSProperties = {
     transform: CSS.Translate.toString(transform),
     padding: '16px',
     backgroundColor: 'var(--color-bg-primary)',
@@ -55,19 +51,58 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
     cursor: 'grab',
     opacity: isDragging ? 0.5 : 1,
     display: 'flex',
-    flexDirection: 'column' as const,
+    flexDirection: 'column',
     gap: '8px',
     transition: 'box-shadow 0.2s, transform 0.2s',
+    position: 'relative',
+  };
+
+  // Delete handler
+  const handleDeleteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+      if (window.confirm(`Are you sure you want to delete the task "${task.title}"?`)) {
+          onDelete(task.id);
+      }
   };
 
   return (
     <div ref={setNodeRef} style={style} {...listeners} {...attributes} onClick={onClick}>
       
+      {/* Delete handler */}
+      <button
+          onClick={handleDeleteClick}
+          title="Delete task"
+          className="delete-button"
+          style={{
+              position: 'absolute',
+              top: '8px',
+              right: '8px',
+              background: 'none',
+              border: 'none',
+              color: 'var(--color-text-secondary)',
+              cursor: 'pointer',
+              padding: '4px',
+              opacity: 0.5,
+              transition: 'opacity 0.2s, color 0.2s',
+              zIndex: 10,
+          }}
+          onMouseEnter={(e) => { 
+              e.currentTarget.style.opacity = '1'; 
+              e.currentTarget.style.color = 'var(--color-danger)'; 
+          }}
+          onMouseLeave={(e) => { 
+              e.currentTarget.style.opacity = '0.5'; 
+              e.currentTarget.style.color = 'var(--color-text-secondary)'; 
+          }}
+      >
+          <FaTrashAlt size={12} />
+      </button>
+
       {/* Top: Priority and Header */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingRight: '24px' }}>
           {/* Priority indicator */}
           <span 
-              title={`Приоритет: ${priorityLabel}`}
+              title={`Priority: ${priorityLabel}`}
               style={{ 
                   width: '8px', 
                   height: '8px', 
@@ -76,14 +111,14 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
                   flexShrink: 0 
               }} 
           />
-          {/* Task title */}
+          {/* Priority indicator */}
           <div style={{ 
-            fontWeight: 600, 
-            fontSize: '15px', 
-            color: 'var(--color-text-primary)', 
-            overflow: 'hidden', 
-            textOverflow: 'ellipsis', 
-            whiteSpace: 'nowrap' 
+              fontWeight: 600, 
+              fontSize: '15px', 
+              color: 'var(--color-text-primary)', 
+              overflow: 'hidden', 
+              textOverflow: 'ellipsis', 
+              whiteSpace: 'nowrap' 
           }}>
               {task.title || 'Без названия'}
           </div>
@@ -101,24 +136,26 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
         {/* ID and Creation Date */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ 
-              background: 'rgba(0,0,0,0.05)', 
-              padding: '2px 6px', 
-              borderRadius: '4px', 
-              fontFamily: 'monospace' 
+                background: 'rgba(0,0,0,0.05)', 
+                padding: '2px 6px', 
+                borderRadius: '4px', 
+                fontFamily: 'monospace' 
             }}>
               #{task.id.slice(0, 4)}
             </span>
-            <span title={`Создана: ${new Date(task.createdAt).toLocaleString()}`}>
+            <span title={`Created: ${new Date(task.createdAt).toLocaleString()}`}>
               🗓️ {formatDate(task.createdAt)}
             </span>
         </div>
         
         {/* Comments and Artist */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            {/* Комментарии */}
+            {/* Comments */}
             {task.comments && task.comments.length > 0 && (
-              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }} 
-                    title={`${task.comments.length} комментариев`}>
+              <span 
+                  style={{ display: 'flex', alignItems: 'center', gap: '4px' }} 
+                  title={`${task.comments.length} comments`}
+              >
                 💬 {task.comments.length}
               </span>
             )}
@@ -128,12 +165,12 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
                 <img 
                     src={task.assignee.avatar} 
                     alt={task.assignee.name} 
-                    title={`Ответственный: ${task.assignee.name}`}
+                    title={`Responsible: ${task.assignee.name}`}
                     style={{ 
-                      width: '20px', 
-                      height: '20px', 
-                      borderRadius: '50%', 
-                      border: '1px solid #ddd' 
+                        width: '20px', 
+                        height: '20px', 
+                        borderRadius: '50%', 
+                        border: '1px solid #ddd' 
                     }}
                 />
             )}
