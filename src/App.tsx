@@ -2,8 +2,7 @@ import React from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { Toaster } from 'sonner'; 
 import { router } from './app/routes';
-import { useTheme } from './hooks/useTheme';
-import './theme.css';
+import './app/theme.css';
 
 const App: React.FC = () => {
   
