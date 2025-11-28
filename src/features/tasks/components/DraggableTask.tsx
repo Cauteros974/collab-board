@@ -50,6 +50,10 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
                 <span style={{ background: 'rgba(0,0,0,0.05)', padding: '2px 6px', borderRadius: '4px', fontFamily: 'monospace' }}>
                     #{task.id.slice(0, 4)}
                 </span>
+                {/* FIX "0" ERROR: Using > 0 */}
+                {task.comments && task.comments.length > 0 && (
+                    <span style={{ display: 'flex', alignItems: 'center'}}
+                )}
             </div>
         </div>
     );
