@@ -11,5 +11,14 @@ export const ChatPage = () => {
     const handleSend = (e: React.FormEvent) => {
         e.preventDefault();
         if (!input.trim()) return;
+
+        setMessages([
+            ...messages,
+            {
+                id: Data.now(),
+                text: input,
+                author: user?.name || 'Guest',
+            }
+        ])
     }
 } 
