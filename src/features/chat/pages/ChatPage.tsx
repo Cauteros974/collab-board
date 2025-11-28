@@ -80,7 +80,7 @@ export const ChatPage = () => {
                     style={{
                         padding: '12px 24px', 
                         background: 'var(--color-primary)', 
-                        color: "white",
+                        color: 'white',
                         border: 'none', 
                         borderRadius: '8px',
                         cursor: 'pointer',
