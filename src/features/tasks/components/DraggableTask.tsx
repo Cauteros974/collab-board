@@ -26,7 +26,7 @@ const getPriorityColor = (priority?: Priority) => {
 // Date formatting
 const formatDate = (isoString: string) => {
     const date = new Date(isoString);
-    return date.toLocaleDateString('ru-RU', {
+    return date.toLocaleDateString('en-US', {
         day: 'numeric', 
         month: 'short'
     }).replace('.', '');
