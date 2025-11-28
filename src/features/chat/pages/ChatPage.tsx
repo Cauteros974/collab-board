@@ -74,6 +74,14 @@ export const ChatPage = () => {
                         outline: 'none'
                     }}
                 />
+
+                <button 
+                    type="submit"
+                    style={{
+                        padding: '12px 34px', 
+                        background: 'var(--color-primary)', 
+                    }}
+                />
             </form>
         </div>
     )
