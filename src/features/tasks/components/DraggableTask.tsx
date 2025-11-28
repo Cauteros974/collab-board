@@ -52,7 +52,9 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
                 </span>
                 {/* FIX "0" ERROR: Using > 0 */}
                 {task.comments && task.comments.length > 0 && (
-                    <span style={{ display: 'flex', alignItems: 'center'}}
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '4px'}}>
+                        💬 {task.comments.length}
+                    </span>
                 )}
             </div>
         </div>
