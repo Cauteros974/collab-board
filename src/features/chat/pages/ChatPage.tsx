@@ -26,7 +26,7 @@ export const ChatPage = () => {
 
     return(
         <div style={{ display: 'flex', flexDirection: 'column', height: 'calc(100vh - 40px)'}}>
-            <h2 style={{marginBottom: '10px'}}>Team Chat</h2>
+            <h2 style={{marginBottom: '20px'}}>Team Chat</h2>
         </div>
     )
 } ;
