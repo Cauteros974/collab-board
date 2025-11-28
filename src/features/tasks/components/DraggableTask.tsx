@@ -20,8 +20,8 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
         marginBottom: '10px',
         borderRadius: '6px',
         boxShadow: isDragging 
-        ? '0 5px 15px rgba(0,0,0,0.15)' 
-        : 'var(--shadow-sm)',
+        ? '0 5px 15px rgba(0,0,0,0.15)' // Drop shadow
+        : 'var(--shadow-sm)', // A regular shadow
         border: '1px solid rgba(0,0,0,0.05)',
         cursor: 'grab',
         opacity: isDragging ? 0.5 : 1,
@@ -33,7 +33,18 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
 
     return(
         <div ref = {setNodeRef} style={style} {...listeners} {...attributes} onClick={onClick}>
-            <div style={{ fontWeight: 500}}>{task.comments.length}</div>
+            {/*Task title*/}
+            <div style={{ fontWeight: 600, fontSize: '15px', color: 'var(--color-text-primary)' }}>
+                {task.title || 'Untitled'}
+            </div>
+
+            {/*Bottom panel with ID and icons*/}
+            <div style={{
+                display: 'flex',
+                justifyContent: 'center'
+            }}>
+
+            </div>
         </div>
     );
 };

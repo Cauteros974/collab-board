@@ -3,6 +3,7 @@ import { Layout } from '../components/common/Layout/Layout';
 import { BoardPage } from '../features/tasks/pages/BoardPage';
 import { DashboardPage } from '../features/dashboard/pages/DashboardPage';
 import { LoginPage } from '../features/auth/pages/LoginPage';
+import { ChatPage } from '../features/chat/pages/ChatPage';
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,8 @@ export const router = createBrowserRouter([
       
       // Dashboard page
       { path: 'dashboard', element: <DashboardPage /> },
+
+      {path: 'chat', element: <ChatPage />}
     ],
   },
 ]);

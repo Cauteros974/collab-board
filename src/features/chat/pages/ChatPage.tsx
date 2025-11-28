@@ -91,5 +91,5 @@ export const ChatPage = () => {
                 </button>
             </form>
         </div>
-    )
+    );
 } ;
