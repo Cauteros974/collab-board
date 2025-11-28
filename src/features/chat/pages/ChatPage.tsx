@@ -7,4 +7,9 @@ export const ChatPage = () => {
         { id: 1, text: 'Hello everyone! How is the project going??', author: 'System', time: '10:00' },
     ]);
     const [input, setInput] = useState('');
+
+    const handleSend = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!input.trim()) return;
+    }
 } 
