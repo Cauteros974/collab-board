@@ -50,6 +50,11 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
             <div style = {{ display: 'flex', alignItems: 'center', gap: '8px'}}>
                 <span 
                     title={`Priority: ${task.priority.toUpperCase()}`}
+                    style={{
+                        width: '8px',
+                        height: '8px',
+                        borderRadius: '50%'
+                    }}
                 />
             </div>
 
