@@ -58,8 +58,13 @@ export const ChatPage = () => {
                             {msg.text}
                         </div>
                     </div>
-        ))}
+                ))}
             </div>
+
+            {/* Input Field*/}
+            <form onSubmit={handleSend} style={{ display: 'flex', gap: '12px'}}>
+                
+            </form>
         </div>
     )
 } ;
