@@ -63,7 +63,11 @@ export const ChatPage = () => {
 
             {/* Input Field*/}
             <form onSubmit={handleSend} style={{ display: 'flex', gap: '10px'}}>
-
+                <input
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    placeholder="Write message..."
+                />
             </form>
         </div>
     )
