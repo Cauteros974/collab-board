@@ -19,6 +19,7 @@ export const BoardPage = () => {
   };
 
   const columns: { id: Status; title: string }[] = [
+    { id: 'todo', title: 'TODO' },
     
   ];
 
