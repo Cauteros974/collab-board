@@ -1,5 +1,6 @@
 export type Status = 'todo' | 'in-progress' | 'done';
 export type Prioruty = 'low' | 'medium' | 'high';
+
 export interface User {
     id: string;
     name: string;
@@ -20,4 +21,6 @@ export interface Task {
     status: Status;
     comments: Comment[];
     createdAt: string;
+    priority: Prioruty;
+    assignee: User;
 }
