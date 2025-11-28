@@ -41,7 +41,11 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick }) => {
             {/*Bottom panel with ID and icons*/}
             <div style={{
                 display: 'flex',
-                justifyContent: 'center'
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                fontSize: '12px', 
+                color: 'var(--color-text-secondary)',
+                marginTop: '4px'
             }}>
 
             </div>
