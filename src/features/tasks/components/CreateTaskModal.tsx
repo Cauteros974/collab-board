@@ -118,8 +118,13 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
                       borderRadius:'20px',
                       border: isSelected ? '1px solid var(--color-primary)' : '1px solid #ddd',
                       background: isSelected ? 'white' : 'var(--color-text-secondary)',
+                      cursor: 'pointer',
+                      fontSize: '12px',
+                      transition: 'all 0.2s'
                     }}
-                  />
+                  >
+                    {tag}
+                  </button>
                 )
               })}
             </div>
