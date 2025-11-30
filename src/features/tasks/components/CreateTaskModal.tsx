@@ -95,7 +95,9 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
             <div style={{ flex: 1 }}>
               <label style={{display: 'block', marginBottom: 6, fontWeight: 500}}>Priority</label>
               <select {...register('priority')} style={{ width: '100%', padding: '10px', borderRadius: 6, border: '1px solid #ddd' }}>
-                
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
               </select>
             </div>
           </div>
