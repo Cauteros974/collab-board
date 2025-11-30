@@ -1,12 +1,12 @@
 import React from 'react';
-import { useForm, Watch } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useTaskStore } from '../store';
 import { Button } from '../../../components/ui/Button/Button/Button';
 import { type Status, type Priority } from '../types';
 
-//Validation Scheme
+//Validation Schema
 const taskSchema = z.object({
     title: z.string().min(2, 'Minimum 2 characters').max(50, 'Maximum 50'),
     description: z.string().optional(),
@@ -44,7 +44,7 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
     const currentTags = selectedTags || [];
     if(currentTags.includes(tag)) {
       setValue('tags', currentTags.filter(t => t !== tag));
-    } else{
+    } else {
       setValue('tags', [...currentTags, tag]);
     }
   };
@@ -76,24 +76,49 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
         <h2 style={{ marginTop: 0, marginBottom: 20 }}>New task</h2>
         <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
 
-          
-          
+          {/*Title*/}
           <div>
-            <label style={{ display: 'block', marginBottom: 4 }}>Title</label>
+            <label style={{ display: 'block', marginBottom: 4, fontWeight: 500 }}>Title</label>
             <input 
               {...register('title')} 
               placeholder='For example, Layout the header'
-              style={{ width: '100%', padding: 8, borderRadius: 6, border: '1px solid #ccc' }} 
+              style={{ 
+                width: '100%', 
+                padding: 10, 
+                borderRadius: 6, 
+                border: '1px solid #ccc',
+                fontSize: '14px'
+              }} 
             />
             {errors.title && <span style={{ color: 'red', fontSize: 12 }}>{errors.title.message}</span>}
           </div>
 
+          {/*Description (optional)*/}
+          <div>
+            <label style={{ display: 'block', marginBottom: 4, fontWeight: 500 }}>Description (optional)</label>
+            <textarea 
+              {...register('description')} 
+              placeholder='Add more details...'
+              style={{ 
+                width: '100%', 
+                padding: 10, 
+                borderRadius: 6, 
+                border: '1px solid #ccc',
+                fontSize: '14px',
+                minHeight: '80px',
+                resize: 'vertical',
+                fontFamily: 'inherit'
+              }} 
+            />
+          </div>
+
+          {/*Status and Priority*/}
           <div style={{display: 'flex', gap: 20 }}>
             <div style={{ flex: 1}}>
               <label style={{ display: 'block', marginBottom: 6, fontWeight: 500 }}>Status</label>
               <select {...register('status')} style={{ width: '100%', padding: '10px', borderRadius: 6, border: '1px solid #ddd'  }}>
-                <option value="todo">To be fulfilled</option>
-                <option value="in-progress">At work</option>
+                <option value="todo">To Do</option>
+                <option value="in-progress">In Progress</option>
                 <option value="done">Done</option>
               </select>
             </div>
@@ -120,12 +145,14 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
                     type="button"
                     onClick={() => toggleTag(tag)}
                     style={{
-                      padding: '6px 20px',
+                      padding: '6px 14px',
                       borderRadius:'20px',
-                      border: isSelected ? '1px solid var(--color-primary)' : '1px solid #ddd',
-                      background: isSelected ? 'white' : 'var(--color-text-secondary)',
+                      border: isSelected ? '2px solid var(--color-primary)' : '1px solid #ddd',
+                      background: isSelected ? 'var(--color-primary)' : 'white',
+                      color: isSelected ? 'white' : 'var(--color-text-primary)',
                       cursor: 'pointer',
                       fontSize: '12px',
+                      fontWeight: isSelected ? 600 : 400,
                       transition: 'all 0.2s'
                     }}
                   >
