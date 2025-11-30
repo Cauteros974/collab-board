@@ -113,9 +113,11 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
                     key={tag}
                     type="button"
                     onClick={() => toggleTag(tag)}
-                    style={
-                      padding: 20px
-                    }
+                    style={{
+                      padding: '6px 20px',
+                      borderRadius:'20px',
+                      border: isSelected ? '1px solid var(--color-primary)' : '1px solid #ddd'
+                    }}
                   />
                 )
               })}
