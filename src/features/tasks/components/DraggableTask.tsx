@@ -27,7 +27,7 @@ const getTagStyle = (tag: string) => {
   if(normalizedTag.includes('design')) return {bg: '#e3f2fd', text: '#0d47a1'}; //blue
   if(normalizedTag.includes('dev')) return {bg: '#e8f5e9', text: '#1b5e20'}; //green
   if(normalizedTag.includes('bug') || normalizedTag.includes('fix')) return { bg: '#ffebee', text: '#b71c1c' }; //red
-  if(normalizedTag.includes('design')) return {bg: '#e3f2fd', text: '#0d47a1'};
+  if(normalizedTag.includes('marketing')) return {bg: '#f3e5f5', text: '#4a148c'}; //violet
   if(normalizedTag.includes('design')) return {bg: '#e3f2fd', text: '#0d47a1'};
 }
 
