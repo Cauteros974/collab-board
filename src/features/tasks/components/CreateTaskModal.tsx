@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Watch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useTaskStore } from '../store';
@@ -38,7 +38,12 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
     }
   });
 
-  
+  const selectedTags = watch('tags');
+
+  const toggleTag = (tag: string) => {
+    const currentTags = selectedTags || [];
+    if(currentTags.includes(tag));
+  }
 
   const onSubmit = (data: TaskFormValues) => {
     addTask(data.title, data.status as Status);
