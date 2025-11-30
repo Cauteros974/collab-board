@@ -17,6 +17,9 @@ const taskSchema = z.object({
 
 type TaskFormValues = z.infer<typeof taskSchema>;
 
+//Tags available for selection
+const AVAILABLE_TAGS = ['Design', 'Dev', 'Bug', 'Marketing', 'Urgent', 'Feature'];
+
 interface Props {
   isOpen: boolean;
   onClose: () => void;
@@ -34,6 +37,8 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
       tags: []
     }
   });
+
+  
 
   const onSubmit = (data: TaskFormValues) => {
     addTask(data.title, data.status as Status);
