@@ -116,7 +116,8 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
                     style={{
                       padding: '6px 20px',
                       borderRadius:'20px',
-                      border: isSelected ? '1px solid var(--color-primary)' : '1px solid #ddd'
+                      border: isSelected ? '1px solid var(--color-primary)' : '1px solid #ddd',
+                      background: isSelected ? 'white' : 'var(--color-text-secondary)',
                     }}
                   />
                 )
