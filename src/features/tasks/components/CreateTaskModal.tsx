@@ -69,11 +69,14 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
       }}>
         <h2 style={{ marginTop: 0, marginBottom: 20 }}>New task</h2>
         <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+
+          
           
           <div>
             <label style={{ display: 'block', marginBottom: 4 }}>Title</label>
             <input 
               {...register('title')} 
+              placeholder='For example, Layout the header'
               style={{ width: '100%', padding: 8, borderRadius: 6, border: '1px solid #ccc' }} 
             />
             {errors.title && <span style={{ color: 'red', fontSize: 12 }}>{errors.title.message}</span>}
