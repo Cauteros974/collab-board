@@ -82,7 +82,7 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
             {errors.title && <span style={{ color: 'red', fontSize: 12 }}>{errors.title.message}</span>}
           </div>
 
-          <div>
+          <div style={{display: 'flex', gap: 20 }}>
             <label style={{ display: 'block', marginBottom: 4 }}>Status</label>
             <select {...register('status')} style={{ width: '100%', padding: 8 }}>
               <option value="todo">To be fulfilled</option>
