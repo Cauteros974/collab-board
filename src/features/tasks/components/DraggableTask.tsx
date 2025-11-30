@@ -29,6 +29,8 @@ const formatDate = (isoString: string): string => {
     }).replace('.', '');
 }
 
+
+
 export const DraggableTask: React.FC<Props> = ({ task, onClick, onDelete }) => {
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
     id: task.id,
@@ -120,7 +122,7 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick, onDelete }) => {
               textOverflow: 'ellipsis', 
               whiteSpace: 'nowrap' 
           }}>
-              {task.title || 'Без названия'}
+              {task.title || 'Untitled'}
           </div>
       </div>
       
