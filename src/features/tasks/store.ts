@@ -2,11 +2,18 @@ import { create } from "zustand";
 import { persist } from 'zustand/middleware';
 import { v4 as uuidv4 } from 'uuid';
 import { toast } from 'sonner';
-import type { Task, Status, Comment } from './types';
+import type { Task, Status, Comment, Priority } from './types';
+import type { Payload } from "recharts/types/component/DefaultTooltipContent";
 
+interface CreateTaskPayload {
+    title: string;
+    status: Status;
+    priority: Priority;
+    tags: string[];
+}
 interface TaskStore {
     tasks: Task[];
-    addTask: (title: string, status: Status) => void;
+    addTask: (title: string, status: Status, payload: CreateTaskPayload) => void;
     moveTask: (id: string, newStatus: Status) => void;
     updateTask: (id: string, updates: Partial<Task>) => void;
     addComment: (taskId: string, comment: Comment) => void;
