@@ -42,7 +42,11 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
 
   const toggleTag = (tag: string) => {
     const currentTags = selectedTags || [];
-    if(currentTags.includes(tag));
+    if(currentTags.includes(tag)) {
+      setValue('tags', currentTags.filter(t => t !== tag));
+    } else{
+      setValue('tags', [...currentTags, tag]);
+    }
   }
 
   const onSubmit = (data: TaskFormValues) => {
