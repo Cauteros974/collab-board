@@ -4,6 +4,15 @@ import { BoardPage } from '../features/tasks/pages/BoardPage';
 import { DashboardPage } from '../features/dashboard/pages/DashboardPage';
 import { LoginPage } from '../features/auth/pages/LoginPage';
 import { ChatPage } from '../features/chat/pages/ChatPage';
+import { useAuthStore } from '../features/auth/store';
+
+const ProtectedRoute = ({ children }: {children: React.ReactNode}) => {
+  const user = useAuthStore((state) => state.user);
+
+  if(!user) {
+    return <Navigate to = "/login" replace />;
+  }
+}
 
 export const router = createBrowserRouter([
   {
