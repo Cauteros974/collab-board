@@ -29,6 +29,8 @@ const getTagStyle = (tag: string) => {
   if(normalizedTag.includes('bug') || normalizedTag.includes('fix')) return { bg: '#ffebee', text: '#b71c1c' }; //red
   if(normalizedTag.includes('marketing')) return {bg: '#f3e5f5', text: '#4a148c'}; //violet
   if (normalizedTag.includes('urgent') || normalizedTag.includes('asap')) return { bg: '#fff3e0', text: '#e65100' }; // orange
+
+  return{bg: `var(--color-bg-secondary)`, text: 'var(--color-text-secondary)'};
 }
 
 // Date formatting
