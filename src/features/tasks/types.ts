@@ -22,5 +22,7 @@ export interface Task {
     comments: Comment[];
     createdAt: string;
     priority: Priority;
-    assignee: User;
+    assignee: User | null;
+
+    tags: string[];
 }
