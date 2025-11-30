@@ -91,6 +91,13 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
                 <option value="done">Done</option>
               </select>
             </div>
+
+            <div style={{ flex: 1 }}>
+              <label style={{display: 'block', marginBottom: 6, fontWeight: 500}}>Priority</label>
+              <select {...register('priority')} style={{ width: '100%', padding: '10px', borderRadius: 6, border: '1px solid #ddd' }}>
+                
+              </select>
+            </div>
           </div>
 
           <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end', marginTop: 10 }}>
