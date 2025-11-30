@@ -29,7 +29,7 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
   const addTask = useTaskStore((state) => state.addTask);
   
   //Hook Form
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<TaskFormValues>({
+  const { register, handleSubmit, formState: { errors }, reset, setValue, watch } = useForm<TaskFormValues>({
     resolver: zodResolver(taskSchema),
     defaultValues: { 
       status: 'todo',
@@ -47,7 +47,7 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
     } else{
       setValue('tags', [...currentTags, tag]);
     }
-  }
+  };
 
   const onSubmit = (data: TaskFormValues) => {
     addTask(data.title, data.status as Status);
