@@ -4,13 +4,14 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useTaskStore } from '../store';
 import { Button } from '../../../components/ui/Button/Button/Button';
-import { type Status } from '../types';
+import { type Status, type Priority } from '../types';
 
 //Validation Scheme
 const taskSchema = z.object({
     title: z.string().min(2, 'Minimum 2 characters').max(50, 'Maximum 50'),
     description: z.string().optional(),
     status: z.enum(['todo', 'in-progress', 'done']),
+    priority: z.enum(['low', 'medium', 'high']),
 });
 
 type TaskFormValues = z.infer<typeof taskSchema>;
@@ -26,7 +27,11 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
   //Hook Form
   const { register, handleSubmit, formState: { errors }, reset } = useForm<TaskFormValues>({
     resolver: zodResolver(taskSchema),
-    defaultValues: { status: 'todo' }
+    defaultValues: { 
+      status: 'todo',
+      priority: 'medium',
+      tags: []
+    }
   });
 
   const onSubmit = (data: TaskFormValues) => {
