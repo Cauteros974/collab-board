@@ -64,7 +64,8 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
       backdropFilter: 'blur(3px)'
     }}>
       <div style={{
-        background: 'var(--color-bg-primary)', padding: 24, borderRadius: 12, width: 450
+        background: 'var(--color-bg-primary)', padding: 24, borderRadius: 12, width: 450,
+        boxShadow: '0 20px 25px -5px'
       }}>
         <h2 style={{ marginTop: 0, marginBottom: 20 }}>New task</h2>
         <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
