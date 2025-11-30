@@ -6,6 +6,7 @@ import { LoginPage } from '../features/auth/pages/LoginPage';
 import { ChatPage } from '../features/chat/pages/ChatPage';
 import { useAuthStore } from '../features/auth/store';
 
+//Component for protection routes
 const ProtectedRoute = ({ children }: {children: React.ReactNode}) => {
   const user = useAuthStore((state) => state.user);
 
