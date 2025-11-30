@@ -28,9 +28,9 @@ const getTagStyle = (tag: string) => {
   if(normalizedTag.includes('dev')) return {bg: '#e8f5e9', text: '#1b5e20'}; //green
   if(normalizedTag.includes('bug') || normalizedTag.includes('fix')) return { bg: '#ffebee', text: '#b71c1c' }; //red
   if(normalizedTag.includes('marketing')) return {bg: '#f3e5f5', text: '#4a148c'}; //violet
-  if (normalizedTag.includes('urgent') || normalizedTag.includes('asap')) return { bg: '#fff3e0', text: '#e65100' }; // orange
+  if (normalizedTag.includes('urgent') || normalizedTag.includes('asap')) return { bg: '#fff3e0', text: '#e65100' }; //orange
 
-  return{bg: `var(--color-bg-secondary)`, text: 'var(--color-text-secondary)'};
+  return {bg: 'var(--color-bg-secondary)', text: 'var(--color-text-secondary)'};
 }
 
 // Date formatting
@@ -41,7 +41,6 @@ const formatDate = (isoString: string): string => {
         month: 'short'
     }).replace('.', '');
 }
-
 
 export const DraggableTask: React.FC<Props> = ({ task, onClick, onDelete }) => {
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
@@ -82,7 +81,7 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick, onDelete }) => {
   return (
     <div ref={setNodeRef} style={style} {...listeners} {...attributes} onClick={onClick}>
       
-      {/* Delete handler */}
+      {/* Delete button */}
       <button
           onClick={handleDeleteClick}
           title="Delete task"
@@ -112,7 +111,7 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick, onDelete }) => {
           <FaTrashAlt size={12} />
       </button>
 
-      {/* Top: Priority and Header */}
+      {/* Top: Priority and Title */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingRight: '24px' }}>
           {/* Priority indicator */}
           <span 
@@ -125,7 +124,7 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick, onDelete }) => {
                   flexShrink: 0 
               }} 
           />
-          {/* Priority indicator */}
+          {/* Task title */}
           <div style={{ 
               fontWeight: 600, 
               fontSize: '15px', 
@@ -137,8 +136,32 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick, onDelete }) => {
               {task.title || 'Untitled'}
           </div>
       </div>
+
+      {/* Tags */}
+      {task.tags && task.tags.length > 0 && (
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginTop: '4px' }}>
+          {task.tags.map((tag, idx) => {
+            const tagStyle = getTagStyle(tag);
+            return (
+              <span 
+                key={idx}
+                style={{
+                  background: tagStyle.bg,
+                  color: tagStyle.text,
+                  padding: '2px 8px',
+                  borderRadius: '12px',
+                  fontSize: '11px',
+                  fontWeight: 500,
+                }}
+              >
+                {tag}
+              </span>
+            );
+          })}
+        </div>
+      )}
       
-      {/* Bottom panel with ID, Date, Comments and Artist */}
+      {/* Bottom panel with ID, Date, Comments and Assignee */}
       <div style={{ 
         display: 'flex', 
         justifyContent: 'space-between', 
@@ -162,25 +185,7 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick, onDelete }) => {
             </span>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '12px', color: 'var(--color-text-secondary)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ background: 'rgba(0,0,0,0.05)', padding: '2px 6px', borderRadius: '4px', fontFamily: 'monospace' }}>
-              #{task.id.slice(0, 4)}
-            </span>
-            <span>🗓️ {formatDate(task.createdAt)}</span>
-        </div>
-        
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            {task.comments && task.comments.length > 0 && (
-              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>💬 {task.comments.length}</span>
-            )}
-            {task.assignee && (
-                <img src={task.assignee.avatar} style={{ width: '20px', height: '20px', borderRadius: '50%', border: '1px solid #ddd' }} />
-            )}
-        </div>
-      </div>
-
-        {/* Comments and Artist */}
+        {/* Comments and Assignee */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             {/* Comments */}
             {task.comments && task.comments.length > 0 && (
@@ -192,7 +197,7 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick, onDelete }) => {
               </span>
             )}
 
-            {/* Performer (Assignee) */}
+            {/* Assignee */}
             {task.assignee && (
                 <img 
                     src={task.assignee.avatar} 
