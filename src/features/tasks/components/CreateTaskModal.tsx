@@ -50,7 +50,13 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
   };
 
   const onSubmit = (data: TaskFormValues) => {
-    
+    addTask({
+      title: data.title,
+      description: data.description || '',
+      status: data.status as Status,
+      priority: data.priority as Priority,
+      tags: data.tags || []
+    });
     reset();
     onClose();
   };
