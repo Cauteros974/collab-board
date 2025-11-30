@@ -5,6 +5,7 @@ import { DashboardPage } from '../features/dashboard/pages/DashboardPage';
 import { LoginPage } from '../features/auth/pages/LoginPage';
 import { ChatPage } from '../features/chat/pages/ChatPage';
 import { useAuthStore } from '../features/auth/store';
+import { Children } from 'react';
 
 //Component for protection routes
 const ProtectedRoute = ({ children }: {children: React.ReactNode}) => {
@@ -17,15 +18,33 @@ const ProtectedRoute = ({ children }: {children: React.ReactNode}) => {
   return<>{children}</>
 };
 
+//Component for redirecting from login if already logged in
+const PublicRoute = ({children}: {children: React.ReactNode}) => {
+  const user = useAuthStore((state) => state.user);
+  
+  if (user) {
+    return <Navigate to="/board" replace />;
+  }
+
+  return <>{children}</>
+}
+
 export const router = createBrowserRouter([
   {
     path: '/login',
-    element: <LoginPage />,
+    element: (
+      <PublicRoute>
+        <LoginPage />
+      </PublicRoute>
+    )
   },
   {
     path: '/',
-    
-    element: <Layout />, 
+    element: (
+      <ProtectedRoute>
+        <Layout />
+      </ProtectedRoute>
+    ),
     children: [
       // If the user simply visited the site, we redirect them to /board
       { index: true, element: <Navigate to="/board" replace /> },
