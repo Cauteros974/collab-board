@@ -20,6 +20,14 @@ const getPriorityColor = (priority?: Priority): string => {
     }
 }
 
+// Helper for color tags
+const getTagStyle = (tag: string) => {
+  const normalizetTag = tag.toLowerCase();
+
+  if(normalizetTag.includes('design')) return {bg: '#e3f2fd', text: '#0d47a1'}; //blue
+  
+}
+
 // Date formatting
 const formatDate = (isoString: string): string => {
     const date = new Date(isoString);
