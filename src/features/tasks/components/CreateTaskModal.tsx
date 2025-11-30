@@ -6,7 +6,7 @@ import { useTaskStore } from '../store';
 import { Button } from '../../../components/ui/Button/Button/Button';
 import { type Status } from '../types';
 
-//Validation scheme
+//Validation Scheme
 const taskSchema = z.object({
     title: z.string().min(2, 'Minimum 2 characters').max(50, 'Maximum 50'),
     description: z.string().optional(),
@@ -23,7 +23,7 @@ interface Props {
 export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
   const addTask = useTaskStore((state) => state.addTask);
   
-  //Hook form
+  //Hook Form
   const { register, handleSubmit, formState: { errors }, reset } = useForm<TaskFormValues>({
     resolver: zodResolver(taskSchema),
     defaultValues: { status: 'todo' }
@@ -45,7 +45,7 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
       <div style={{
         background: 'var(--color-bg-primary)', padding: 24, borderRadius: 12, width: 400
       }}>
-        <h2>New task</h2>
+        <h2 style={{ marginTop: 0, marginBottom: 20 }}>New task</h2>
         <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           
           <div>
