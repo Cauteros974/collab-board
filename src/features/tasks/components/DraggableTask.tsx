@@ -25,7 +25,10 @@ const getTagStyle = (tag: string) => {
   const normalizetTag = tag.toLowerCase();
 
   if(normalizetTag.includes('design')) return {bg: '#e3f2fd', text: '#0d47a1'}; //blue
-  
+  if(normalizetTag.includes('dev')) return {bg: '#e8f5e9', text: '#1b5e20'}; //green
+  if(normalizetTag.includes('design')) return {bg: '#e3f2fd', text: '#0d47a1'};
+  if(normalizetTag.includes('design')) return {bg: '#e3f2fd', text: '#0d47a1'};
+  if(normalizetTag.includes('design')) return {bg: '#e3f2fd', text: '#0d47a1'};
 }
 
 // Date formatting
