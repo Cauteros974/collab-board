@@ -12,6 +12,7 @@ const taskSchema = z.object({
     description: z.string().optional(),
     status: z.enum(['todo', 'in-progress', 'done']),
     priority: z.enum(['low', 'medium', 'high']),
+    tags: z.array(z.string())
 });
 
 type TaskFormValues = z.infer<typeof taskSchema>;
