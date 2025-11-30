@@ -114,7 +114,7 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
                     type="button"
                     onClick={() => toggleTag(tag)}
                     style={
-                      
+                      padding: 20px
                     }
                   />
                 )
