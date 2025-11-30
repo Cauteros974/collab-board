@@ -105,7 +105,11 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
           {/*Tags (Click to select)*/}
           <div>
             <label style={{display: 'block', marginBottom: 8, fontWeight: 500}}>Tags</label>
-            <div style={{display: 'flex', gap: 8}}></div>
+            <div style={{display: 'flex', gap: 8, flexWrap: 'wrap'}}>
+              {AVAILABLE_TAGS.map(tag => {
+                const isSelected = selectedTags?.includes(tag);
+              })}
+            </div>
           </div>
 
           <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end', marginTop: 10 }}>
