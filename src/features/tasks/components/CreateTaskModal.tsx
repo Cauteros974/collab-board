@@ -60,10 +60,11 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
   return (
     <div style={{
       position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', 
-      display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000
+      display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000,
+      backdropFilter: 'blur(3px)'
     }}>
       <div style={{
-        background: 'var(--color-bg-primary)', padding: 24, borderRadius: 12, width: 400
+        background: 'var(--color-bg-primary)', padding: 24, borderRadius: 12, width: 450
       }}>
         <h2 style={{ marginTop: 0, marginBottom: 20 }}>New task</h2>
         <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
