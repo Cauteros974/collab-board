@@ -43,7 +43,6 @@ const formatDate = (isoString: string): string => {
 }
 
 
-
 export const DraggableTask: React.FC<Props> = ({ task, onClick, onDelete }) => {
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
     id: task.id,
@@ -162,7 +161,25 @@ export const DraggableTask: React.FC<Props> = ({ task, onClick, onDelete }) => {
               🗓️ {formatDate(task.createdAt)}
             </span>
         </div>
+
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ background: 'rgba(0,0,0,0.05)', padding: '2px 6px', borderRadius: '4px', fontFamily: 'monospace' }}>
+              #{task.id.slice(0, 4)}
+            </span>
+            <span>🗓️ {formatDate(task.createdAt)}</span>
+        </div>
         
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            {task.comments && task.comments.length > 0 && (
+              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>💬 {task.comments.length}</span>
+            )}
+            {task.assignee && (
+                <img src={task.assignee.avatar} style={{ width: '20px', height: '20px', borderRadius: '50%', border: '1px solid #ddd' }} />
+            )}
+        </div>
+      </div>
+
         {/* Comments and Artist */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             {/* Comments */}
