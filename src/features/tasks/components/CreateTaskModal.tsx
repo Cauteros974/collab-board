@@ -85,7 +85,7 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
           <div style={{display: 'flex', gap: 20 }}>
             <div style={{ flex: 1}}>
               <label style={{ display: 'block', marginBottom: 6, fontWeight: 500 }}>Status</label>
-              <select {...register('status')} style={{ width: '100%', padding: 8 }}>
+              <select {...register('status')} style={{ width: '100%', padding: '10px' }}>
                 <option value="todo">To be fulfilled</option>
                 <option value="in-progress">At work</option>
                 <option value="done">Done</option>
