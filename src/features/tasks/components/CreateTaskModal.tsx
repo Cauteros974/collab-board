@@ -108,6 +108,16 @@ export const CreateTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
             <div style={{display: 'flex', gap: 8, flexWrap: 'wrap'}}>
               {AVAILABLE_TAGS.map(tag => {
                 const isSelected = selectedTags?.includes(tag);
+                return(
+                  <button 
+                    key={tag}
+                    type="button"
+                    onClick={() => toggleTag(tag)}
+                    style={
+                      
+                    }
+                  />
+                )
               })}
             </div>
           </div>
