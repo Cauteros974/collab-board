@@ -13,4 +13,5 @@ export interface Group {
 interface GroupStage {
     group: Group[];
     activeGroupId: string | null; // Current ID Group
+    createGroup: (name: string, description: string) => void;
 }
