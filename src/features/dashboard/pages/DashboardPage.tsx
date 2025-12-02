@@ -17,7 +17,7 @@ export const DashboardPage = () => {
 
     return(
         <div style={{ padding: 20}}>
-            <h1>Dashboard project</h1>
+            <h2>Dashboard project</h2>
 
             {/*Statistics cards*/}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 40 }}>
