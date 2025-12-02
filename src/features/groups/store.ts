@@ -11,7 +11,7 @@ export interface Group {
 }
 
 interface GroupStore {
-    group: Group[];
+    groups: Group[];
     activeGroupId: string | null; // Current ID Group
     createGroup: (name: string, description: string) => void;
     setActiveGroup: (id: string) => void;
@@ -22,7 +22,7 @@ export const useGroupStore = create<GroupStore>()(
     persist(
         (set) => ({
             //Create 1 default group
-            group: [
+            groups: [
                 {id: 'default', name: 'General Team', description: 'The Main workspace', createdAt: new Date().toISOString()}
             ],
             activeGroupId: 'default',
