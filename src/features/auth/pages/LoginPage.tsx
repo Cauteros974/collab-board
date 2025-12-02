@@ -76,6 +76,10 @@ export const LoginPage = () => {
                         width:'100%',
                         padding: '12px',
                         borderRadius:'8px',
+                        border: '1px solid #ddd',
+                        fontSize: '16px',
+                        outline: 'none',
+                        transition: 'border-color 0.2s'    
                     }}
                 />
                 </div>
