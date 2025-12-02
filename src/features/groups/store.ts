@@ -9,3 +9,8 @@ export interface Group {
     description?: string;
     createAt: string;
 }
+
+interface GroupStage {
+    group: Group[];
+    activeGroupId: string | null; // Current ID Group
+}
