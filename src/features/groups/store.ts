@@ -10,7 +10,7 @@ export interface Group {
     createAt: string;
 }
 
-interface GroupStage {
+interface GroupStore {
     group: Group[];
     activeGroupId: string | null; // Current ID Group
     createGroup: (name: string, description: string) => void;
@@ -48,5 +48,6 @@ export const useGroupStore = create<GroupStore>()(
                 activeGroupId: state.activeGroupId === id ? 'default' : state.activeGroupId
             })),
         }),
+        { name: 'collab-board-groups' }
     )
-)
+);
