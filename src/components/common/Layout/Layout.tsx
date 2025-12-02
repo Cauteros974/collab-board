@@ -162,7 +162,7 @@ export const Layout: React.FC = () => {
                                     }
                                 }}
                             >
-                                <FaUsers style={{ fontSize: '14px', flexShrink: 0 }} />
+                                <FaUsers style={{ fontSize: '22px', flexShrink: 0 }} />
                                 <div style={{ flex: 1, overflow: 'hidden' }}>
                                     <div style={{ 
                                         fontSize: '13px', 
