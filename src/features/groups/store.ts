@@ -14,4 +14,17 @@ interface GroupStage {
     group: Group[];
     activeGroupId: string | null; // Current ID Group
     createGroup: (name: string, description: string) => void;
+    setActiveGroup: (id: string) => void;
+    deleteGroup: (id: string) => void;
 }
+
+export const useGroupStore = create<GroupStore>()(
+    persist(
+        (set) => ({
+            //Create 1 default group
+            group: [
+                {id: 'default', name: 'General', description: 'The Main workspace'}
+            ]
+        })
+    )
+)
