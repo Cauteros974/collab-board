@@ -5,6 +5,7 @@ export interface User {
     id: string;
     name: string;
     avatar: string;
+    email: string;
 }
 
 export interface Comment {
@@ -23,6 +24,5 @@ export interface Task {
     createdAt: string;
     priority: Priority;
     assignee: User | null;
-
     tags: string[];
 }
