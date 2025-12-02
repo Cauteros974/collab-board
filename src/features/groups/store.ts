@@ -35,6 +35,10 @@ export const useGroupStore = create<GroupStore>()(
                     createdAt: new Date().toISOString()
                 };
                 toast.success(`Group "${name}" create!`);
+                return(
+                    groups: [...state.group, newGroup],
+                    activeGroupId: newGroup.id
+                )
             }
         })
     )
