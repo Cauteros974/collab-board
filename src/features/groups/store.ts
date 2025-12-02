@@ -34,7 +34,7 @@ export const useGroupStore = create<GroupStore>()(
                     description,
                     createdAt: new Date().toISOString()
                 };
-                toast.success('Group "${name}" create!');
+                toast.success(`Group "${name}" create!`);
             }
         })
     )
