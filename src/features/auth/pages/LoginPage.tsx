@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store";
+import { email } from "zod";
 
 export const LoginPage = () => {
     const [name, setName] = useState('');
@@ -63,6 +64,19 @@ export const LoginPage = () => {
                     }}
                     onFocus={(e) => e.target.style.borderColor = 'var(--color-primary)'}
                     onBlur={(e) => e.target.style.borderColor = '#ddd'}
+                />
+                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500, fontSize: '14px' }}>
+                    Your Email
+                </label>
+                <input
+                    type="email"
+                    value={name}
+                    placeholder="example@mail.com"
+                    style={{
+                        width:'100%',
+                        padding: '12px',
+                        borderRadius:'8px',
+                    }}
                 />
                 </div>
 
