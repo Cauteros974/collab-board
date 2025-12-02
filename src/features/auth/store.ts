@@ -4,17 +4,16 @@ import { type User } from '../tasks/types';
 
 interface AuthStore {
   user: User | null;
-  login: (name: string, email: string) => void;
+  login: (name: string) => void;
   logout: () => void;
 }
 
 export const useAuthStore = create<AuthStore>((set) => ({
   user: JSON.parse(localStorage.getItem('user') || 'null'),
-  login: (name, email) => {
+  login: (name) => {
     const user = { 
       id: 'u1', 
       name,
-      email, 
       avatar: `https://ui-avatars.com/api/?name=${name}&background=random` 
     };
     localStorage.setItem('user', JSON.stringify(user));
