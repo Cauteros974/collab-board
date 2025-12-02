@@ -23,7 +23,7 @@ export const useGroupStore = create<GroupStore>()(
         (set) => ({
             //Create 1 default group
             group: [
-                {id: 'default', name: 'General Team', description: 'The Main workspace', createdAt: new Date()}
+                {id: 'default', name: 'General Team', description: 'The Main workspace', createdAt: new Date().toISOString()}
             ]
         })
     )
