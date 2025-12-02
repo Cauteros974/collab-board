@@ -3,6 +3,6 @@ import { useGroupStore } from "../store";
 import { Button } from "../../../components/ui/Button/Button/Button";
 
 interface Props{
-    isOpen: string;
+    isOpen: boolean;
     onClose: () => void;
 }
