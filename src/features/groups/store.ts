@@ -29,17 +29,17 @@ export const useGroupStore = create<GroupStore>()(
 
             createGroup: (name, description) => set((state) => {
                 const newGroup = {
-                    id: uuidv4(),
-                    name,
-                    description,
-                    createdAt: new Date().toISOString()
+                  id: uuidv4(),
+                  name,
+                  description,
+                  createdAt: new Date().toISOString()
                 };
-                toast.success(`Group "${name}" create!`);
-                return(
-                    groups: [...state.group, newGroup],
-                    activeGroupId: newGroup.id
-                )
-            }
-        })
+                toast.success(`Группа "${name}" создана!`);
+                return { 
+                  groups: [...state.groups, newGroup],
+                  activeGroupId: newGroup.id // Switch to a new one right away
+                };
+            }),
+        }),
     )
 )
