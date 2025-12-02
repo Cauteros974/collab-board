@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store";
-import { email } from "zod";
+import { z } from "zod";
 
 export const LoginPage = () => {
     const [name, setName] = useState('');
@@ -18,6 +18,14 @@ export const LoginPage = () => {
         //Redirect to the board
         navigate('/board');
     };
+
+    const emailSchema = z.string().email();
+    const validEmail = emailSchema.parse("test@example.com");
+                try {
+                emailSchema.parse("invalid-email");
+                } catch (error) {
+                    console.error(error);
+                }
     return(
         <div style={{
             height: '100vh',
@@ -65,9 +73,6 @@ export const LoginPage = () => {
                     onBlur={(e) => e.target.style.borderColor = '#ddd'}
                 />
                 </div>
-
-                
-
                 <button
                     type="submit" 
                     disabled={!name.trim()}
