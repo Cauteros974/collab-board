@@ -18,14 +18,7 @@ export const LoginPage = () => {
         //Redirect to the board
         navigate('/board');
     };
-
-    const emailSchema = z.string().email();
-    const validEmail = emailSchema.parse("test@example.com");
-                try {
-                emailSchema.parse("invalid-email");
-                } catch (error) {
-                    console.error(error);
-                }
+    
     return(
         <div style={{
             height: '100vh',
