@@ -18,7 +18,6 @@ export const LoginPage = () => {
         //Redirect to the board
         navigate('/board');
     };
-
     return(
         <div style={{
             height: '100vh',
@@ -65,24 +64,9 @@ export const LoginPage = () => {
                     onFocus={(e) => e.target.style.borderColor = 'var(--color-primary)'}
                     onBlur={(e) => e.target.style.borderColor = '#ddd'}
                 />
-                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500, fontSize: '14px' }}>
-                    Your Email
-                </label>
-                <input
-                    type="email"
-                    value={name}
-                    placeholder="example@mail.com"
-                    style={{
-                        width:'100%',
-                        padding: '12px',
-                        borderRadius:'8px',
-                        border: '1px solid #ddd',
-                        fontSize: '16px',
-                        outline: 'none',
-                        transition: 'border-color 0.2s'    
-                    }}
-                />
                 </div>
+
+                
 
                 <button
                     type="submit" 
@@ -103,6 +87,6 @@ export const LoginPage = () => {
                     LogIn
                 </button>
             </form>
-        </div>
+        </div> 
     )
 }
