@@ -40,6 +40,13 @@ export const useGroupStore = create<GroupStore>()(
                   activeGroupId: newGroup.id // Switch to a new one right away
                 };
             }),
+
+            setActiveGroup: (id) => set({ activeGroupId: id }),
+
+            deleteGroup: (id) => set((state) => ({
+                groups: state.groups.filter(g => g.id !== id),
+                activeGroupId: state.activeGroupId === id ? 'default' : state.activeGroupId
+            })),
         }),
     )
 )
