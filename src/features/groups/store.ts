@@ -23,7 +23,7 @@ export const useGroupStore = create<GroupStore>()(
         (set) => ({
             //Create 1 default group
             groups: [
-                {id: 'default', name: 'General Team', description: 'The Main workspace', createdAt: new Date().toISOString()}
+                {id: 'default', name: 'General Team', description: 'The Main workspace', createAt: new Date().toISOString()}
             ],
             activeGroupId: 'default',
 
@@ -32,9 +32,9 @@ export const useGroupStore = create<GroupStore>()(
                   id: uuidv4(),
                   name,
                   description,
-                  createdAt: new Date().toISOString()
+                  createAt: new Date().toISOString()
                 };
-                toast.success(`Grpup "${name}" created!`);
+                toast.success(`Group "${name}" created!`);
                 return { 
                   groups: [...state.groups, newGroup],
                   activeGroupId: newGroup.id // Switch to a new one right away
