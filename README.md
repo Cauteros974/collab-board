@@ -35,3 +35,6 @@ The project is an interactive whiteboard with the ability to drag and drop tasks
   # 5. Persistence:
 
       All application data (tasks, groups, user profile) are saved in the browser's local storage, ensuring they persist even after a page reload.
+
+
+# Used Technologies and Libraries
