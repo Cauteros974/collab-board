@@ -49,3 +49,6 @@ The project is an interactive whiteboard with the ability to drag and drop tasks
 | Form Management    | React Hook Form and Zod | Managing form state and enabling schema-based, strict data validation (e.g., for the task creation modal)
 | Icons            | React Icons               | Utilizing popular icon sets (such as Font Awesome) for various UI elements (e.g., moon/sun, trash, plus sign)
 | Unique IDs            | uuid               | Generating unique identifiers for every task and group
+
+
+![alt text](https://github.com/Cauteros974/collab-board/blob/main/src/assets/images/1.png)
