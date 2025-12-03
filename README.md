@@ -17,3 +17,14 @@ The project is an interactive whiteboard with the ability to drag and drop tasks
      • Tasks include Priority (Low, Medium, High), which is visually indicated by color.
      
      • Support for Tags (Labels) for quick categorization (Design, Dev, Bug, etc.) with automatic color assignment.
+  
+  3. User Experience:
+     
+     • Simple authentication using Name and Email to create a user profile.
+     
+     • Theme Switching: Supports both light and dark modes.
+
+  4. Team Collaboration (Workspaces/Groups):
+     
+     • Groups logic has been implemented, allowing users to create separate workspaces (e.g., General Team, Marketing Team) and switch between them via the sidebar.
+     • The user profile, including Email, is displayed in the sidebar.
