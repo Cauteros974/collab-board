@@ -41,7 +41,7 @@ The project is an interactive whiteboard with the ability to drag and drop tasks
 
   | Category         | Library                 | Purpose                 |
 | ---------------- | -------------------------- | -------------------------- |
-| Core Framework               | **React (with TypeScript)**                  |
+| Core Framework               | **React (with TypeScript)**                  | Building the user interface.
 | Routing          | **react-router-dom**       |
 | State management | **Zustand**                |
 | Form handling    | react-hook-form (optional) |
