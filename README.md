@@ -52,3 +52,10 @@ The project is an interactive whiteboard with the ability to drag and drop tasks
 
 
 ![alt text](https://github.com/Cauteros974/collab-board/blob/main/src/assets/images/1.png)
+![alt text](https://github.com/Cauteros974/collab-board/blob/main/src/assets/images/2.png)
+![alt text](https://github.com/Cauteros974/collab-board/blob/main/src/assets/images/3.png)
+![alt text](https://github.com/Cauteros974/collab-board/blob/main/src/assets/images/4.png)
+![alt text](https://github.com/Cauteros974/collab-board/blob/main/src/assets/images/5.png)
+![alt text](https://github.com/Cauteros974/collab-board/blob/main/src/assets/images/6.png)
+![alt text](https://github.com/Cauteros974/collab-board/blob/main/src/assets/images/7.png)
+![alt text](https://github.com/Cauteros974/collab-board/blob/main/src/assets/images/8.png)
