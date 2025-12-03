@@ -39,13 +39,12 @@ The project is an interactive whiteboard with the ability to drag and drop tasks
 
 # Used Technologies and Libraries
 
-  Category,Library,Purpose
-Core Framework,React (with TypeScript),Building the user interface.
-State Management,Zustand,"A lightweight and fast library for global state management (used for storing tasks, groups, and the user profile)."
-Data Persistence,zustand/middleware/persist,Middleware for Zustand that enables automatic saving and restoration of data from localStorage.
-Routing,React Router DOM,"Managing navigation and routing between application pages (/login, /board, /chat)."
-Drag and Drop,@dnd-kit/core,A modern and flexible toolkit for implementing the core drag-and-drop feature.
-Notifications,Sonner,"Used for displaying attractive, non-blocking toast notifications (e.g., upon task creation or deletion)."
-Form Management,React Hook Form and Zod,"Managing form state and enabling schema-based, strict data validation (e.g., for the task creation modal)."
-Icons,React Icons,"Utilizing popular icon sets (such as Font Awesome) for various UI elements (e.g., moon/sun, trash, plus sign)."
-Unique IDs,uuid,Generating unique identifiers for every task and group.
+  | Category         | Technology                 | Technology                 |
+| ---------------- | -------------------------- | -------------------------- |
+| UI               | **React**                  |
+| Routing          | **react-router-dom**       |
+| State management | **Zustand**                |
+| Form handling    | react-hook-form (optional) |
+| Validation       | Zod                        |
+| Data fetching    | React Query / custom hooks |
+| Icons            | lucide-react               |
