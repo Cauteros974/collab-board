@@ -39,9 +39,9 @@ The project is an interactive whiteboard with the ability to drag and drop tasks
 
 # Used Technologies and Libraries
 
-  | Category         | Technology                 | Technology                 |
+  | Category         | Library                 | Purpose                 |
 | ---------------- | -------------------------- | -------------------------- |
-| UI               | **React**                  |
+| Core Framework               | **React (with TypeScript)**                  |
 | Routing          | **react-router-dom**       |
 | State management | **Zustand**                |
 | Form handling    | react-hook-form (optional) |
