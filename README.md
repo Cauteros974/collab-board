@@ -12,5 +12,7 @@ The project is an interactive whiteboard with the ability to drag and drop tasks
   2. Task Management:
      
      • Creation, deletion, and detailed viewing/editing of tasks.
+     
      • Tasks include Priority (Low, Medium, High), which is visually indicated by color.
+     
      • Support for Tags (Labels) for quick categorization (Design, Dev, Bug, etc.) with automatic color assignment.
