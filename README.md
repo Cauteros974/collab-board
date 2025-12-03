@@ -8,7 +8,11 @@ The project is an interactive whiteboard with the ability to drag and drop tasks
 
 #Key Futures:
   1.#Kanban Board: Tasks are organized into columns (To Do, In Progress, Done) and can be moved between them using drag-and-drop functionality.
+  
   2.#Task Management:
-    • Creation, deletion, and detailed viewing/editing of tasks.
-    • Tasks include Priority (Low, Medium, High), which is visually indicated by color.
-    • Support for Tags (Labels) for quick categorization (Design, Dev, Bug, etc.) with automatic color assignment.
+  
+  • Creation, deletion, and detailed viewing/editing of tasks.
+  
+  • Tasks include Priority (Low, Medium, High), which is visually indicated by color.
+  
+  • Support for Tags (Labels) for quick categorization (Design, Dev, Bug, etc.) with automatic color assignment.
