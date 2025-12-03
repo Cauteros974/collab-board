@@ -8,7 +8,9 @@ The project is an interactive whiteboard with the ability to drag and drop tasks
 
 # Key Futures:
 
-  1. Kanban Board: Tasks are organized into columns (To Do, In Progress, Done) and can be moved between them using drag-and-drop functionality.
+  1. Kanban Board:
+  
+     Tasks are organized into columns (To Do, In Progress, Done) and can be moved between them using drag-and-drop functionality.
 
   2. Task Management:
      
