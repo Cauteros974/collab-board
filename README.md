@@ -14,24 +14,24 @@ The project is an interactive whiteboard with the ability to drag and drop tasks
 
   # 2. Task Management:
      
-     • Creation, deletion, and detailed viewing/editing of tasks.
+      Creation, deletion, and detailed viewing/editing of tasks.
      
-     • Tasks include Priority (Low, Medium, High), which is visually indicated by color.
+      Tasks include Priority (Low, Medium, High), which is visually indicated by color.
      
-     • Support for Tags (Labels) for quick categorization (Design, Dev, Bug, etc.) with automatic color assignment.
+      Support for Tags (Labels) for quick categorization (Design, Dev, Bug, etc.) with automatic color assignment.
   
   # 3. User Experience:
      
-     • Simple authentication using Name and Email to create a user profile.
+      Simple authentication using Name and Email to create a user profile.
      
-     • Theme Switching: Supports both light and dark modes.
+      Theme Switching: Supports both light and dark modes.
 
   # 4. Team Collaboration (Workspaces/Groups):
      
-     • Groups logic has been implemented, allowing users to create separate workspaces (e.g., General Team, Marketing Team) and switch between them via the sidebar.
+      Groups logic has been implemented, allowing users to create separate workspaces (e.g., General Team, Marketing Team) and switch between them via the sidebar.
      
-     • The user profile, including Email, is displayed in the sidebar.
+      The user profile, including Email, is displayed in the sidebar.
 
   # 5. Persistence:
 
-    •All application data (tasks, groups, user profile) are saved in the browser's local storage, ensuring they persist even after a page reload.
+      All application data (tasks, groups, user profile) are saved in the browser's local storage, ensuring they persist even after a page reload.
